@@ -13,21 +13,33 @@ const contactInfo = [
   },
   {
     icon: '📞',
-    title: 'Phone',
-    content: '+1 (555) 123-4567',
-    link: 'tel:+15551234567',
+    title: 'Telephone',
+    content: '415-416-8567',
+    link: 'tel:+14154168567',
   },
   {
     icon: '📍',
-    title: 'Address',
-    content: '123 Business St, Suite 100, City, State 12345',
-    link: '#',
+    title: 'San Francisco, CA',
+    content: '1160 Battery St East, Suite 100, San Francisco, CA 94111, United States',
+    link: 'https://maps.google.com/?q=1160+Battery+St+East,+Suite+100,+San+Francisco,+CA+94111',
   },
   {
-    icon: '🕐',
-    title: 'Business Hours',
-    content: 'Mon-Fri: 9AM-6PM EST',
-    link: '#',
+    icon: '📍',
+    title: 'Auburn, KY',
+    content: '125 Caldwell St, Auburn, KY 42206, United States',
+    link: 'https://maps.google.com/?q=125+Caldwell+St,+Auburn,+KY+42206',
+  },
+  {
+    icon: '📍',
+    title: 'Hong Kong',
+    content: 'Room 1006, 10th Floor, 299QRC, 287-299 Queen’s Road Central, Sheung Wan, Hong Kong',
+    link: 'https://maps.google.com/?q=299QRC,+287-299+Queen’s+Road+Central,+Sheung+Wan,+Hong+Kong',
+  },
+  {
+    icon: '📍',
+    title: 'Dongguan, China',
+    content: 'Building 5, No 27, Taisheng Road, Dongcheng District, Dongguan City, Guangdong, 523113, China',
+    link: 'https://maps.google.com/?q=Taisheng+Road,+Dongcheng+District,+Dongguan+523113',
   },
 ];
 ---
@@ -164,57 +176,12 @@ const contactInfo = [
               }
             </div>
 
-            <!-- Map Placeholder -->
-            <div class="mt-8 bg-gray-200 rounded-lg h-64 flex items-center justify-center">
-              <p class="text-gray-600">Map Location</p>
-            </div>
+            <!-- Map links are provided per address above -->
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ Section -->
-  <section class="section-padding bg-gray-50">
-    <div class="container-custom">
-      <div class="max-w-3xl mx-auto">
-        <Heading as="h2" gradient class="text-center mb-8">Frequently Asked Questions</Heading>
-
-        <div class="space-y-4">
-          <details class="bg-white rounded-lg p-6 shadow-md">
-            <summary class="font-semibold cursor-pointer">What services does Da Kong offer?</summary
-            >
-            <p class="mt-4 text-gray-600">
-              We offer educational solutions, custom kit production, consulting services, and more.
-              Visit our Services page for a complete list.
-            </p>
-          </details>
-
-          <details class="bg-white rounded-lg p-6 shadow-md">
-            <summary class="font-semibold cursor-pointer"
-              >How long does custom kit production take?</summary
-            >
-            <p class="mt-4 text-gray-600">
-              Production time varies depending on the complexity and quantity of your order.
-              Typically, it ranges from 2-6 weeks. Contact us for a specific timeline.
-            </p>
-          </details>
-
-          <details class="bg-white rounded-lg p-6 shadow-md">
-            <summary class="font-semibold cursor-pointer">Do you ship internationally?</summary>
-            <p class="mt-4 text-gray-600">
-              Yes, we ship to most countries worldwide. Shipping costs and times vary by location.
-            </p>
-          </details>
-
-          <details class="bg-white rounded-lg p-6 shadow-md">
-            <summary class="font-semibold cursor-pointer">Can I request a custom quote?</summary>
-            <p class="mt-4 text-gray-600">
-              Absolutely! Use the contact form above or email us directly for a personalized quote.
-            </p>
-          </details>
-        </div>
-      </div>
-    </div>
-  </section>
+  
 </Layout>
