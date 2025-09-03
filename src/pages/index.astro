@@ -1,34 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ModernHero from '../components/organisms/ModernHero.astro';
-import ModernFeatureCard from '../components/molecules/ModernFeatureCard.astro';
 import Card from '../components/molecules/Card.astro';
 import ModernButton from '../components/atoms/ModernButton.astro';
 import Heading from '../components/atoms/Heading.astro';
 import { Icon } from 'astro-icon/components';
-
-const services = [
-  {
-    icon: 'tabler/school',
-    title: 'Educational Solutions',
-    description:
-      'Cutting-edge educational programs designed to inspire and empower learners at every level.',
-    color: 'primary' as const,
-  },
-  {
-    icon: 'tabler/package',
-    title: 'Custom Kit Production',
-    description:
-      'Premium quality custom kits engineered with precision and delivered with excellence.',
-    color: 'secondary' as const,
-  },
-  {
-    icon: 'tabler/bulb',
-    title: 'Innovation Consulting',
-    description: 'Strategic insights and expert guidance to transform your vision into reality.',
-    color: 'accent' as const,
-  },
-];
 
 const features = [
   {
@@ -49,12 +25,7 @@ const features = [
   },
 ];
 
-const stats = [
-  { number: '500+', label: 'Happy Clients' },
-  { number: '10+', label: 'Years Experience' },
-  { number: '1000+', label: 'Projects Completed' },
-  { number: '99%', label: 'Client Satisfaction' },
-];
+ 
 ---
 
 <Layout title="Home">
@@ -110,10 +81,10 @@ const stats = [
     <div class="site-container relative z-10">
       <div class="text-center mb-16">
         <h2 class="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-up">
-          Why Choose <span class="text-gradient">Da Kong</span>
+          Why work with <span class="text-gradient">DaKong?</span>
         </h2>
         <p class="text-xl description max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="0.1">
-          Experience the difference with our commitment to excellence and innovation.
+          Client‑centric processes, deep experience, and rigorous quality assurance.
         </p>
       </div>
 
