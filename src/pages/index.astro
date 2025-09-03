@@ -32,24 +32,20 @@ const services = [
 
 const features = [
   {
-    icon: 'tabler/diamond',
-    title: 'Premium Quality',
-    description: 'Only the finest materials and craftsmanship in every product.',
+    icon: 'tabler/user',
+    title: 'Client-centric Approach',
+    description: "We learn each customer's needs and tailor our operational processes to align.",
   },
   {
-    icon: 'tabler/bolt',
-    title: 'Lightning Fast',
-    description: 'Rapid turnaround times without compromising on quality.',
-  },
-  {
-    icon: 'tabler/palette',
-    title: 'Custom Design',
-    description: 'Tailored solutions that perfectly match your unique requirements.',
+    icon: 'tabler/briefcase',
+    title: 'Experience & Expertise',
+    description: 'Our company has more than 15 years of experience in the industry.',
   },
   {
     icon: 'tabler/shield-check',
-    title: 'Guaranteed Excellence',
-    description: '100% satisfaction guarantee on all our products and services.',
+    title: 'Quality Assurance',
+    description:
+      'We adhere to industry standards for good manufacturing practices (GMP) with rigorous quality control.',
   },
 ];
 
@@ -63,8 +59,8 @@ const stats = [
 
 <Layout title="Home">
   <ModernHero
-    title="Welcome to Da Kong"
-    subtitle="Pioneering excellence in education and custom production with innovative solutions that transform possibilities into achievements"
+    title="Customized Manufacturing Solutions"
+    subtitle="DaKong Education believes in the pursuit of learning through hands-on activities. Its mission is to provide dependable quality supplies that inspire young makers to exercise their imagination."
     ctaText="Get Started"
     ctaHref="/contact"
     secondaryCtaText="Explore Solutions"
@@ -72,7 +68,7 @@ const stats = [
   />
 
   <!-- Services Section with Modern Cards -->
-  <section class="section-padding bg-gray-50 dark:bg-gray-900/40">
+  <section class="section-padding bg-gray-50">
     <div class="site-container">
       <div class="text-center mb-16">
         <span
@@ -113,7 +109,7 @@ const stats = [
     <div class="site-container">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <img
-          src="https://static.wixstatic.com/media/8d0f01_8140a7c5ec8340b08ef9b553398f94f7~mv2.jpg"
+          src="/images/brand-collab.jpg"
           alt="Brand Collaboration"
           class="w-full rounded-2xl shadow"
           data-aos="fade-right"
@@ -154,7 +150,7 @@ const stats = [
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {
           features.map((feature, index) => (
             <div class="glass-card rounded-2xl p-8 text-center">
@@ -184,7 +180,7 @@ const stats = [
         </p>
       </div>
       <img
-        src="https://static.wixstatic.com/media/8d0f01_cea05e20f9da408ab7edbb43368bc13e~mv2.png"
+        src="/images/product-development.png"
         alt="Production"
         class="w-full rounded-2xl shadow"
         data-aos="zoom-in"
