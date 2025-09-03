@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ModernHero from '../components/organisms/ModernHero.astro';
+import Heading from '../components/atoms/Heading.astro';
+import ModernButton from '../components/atoms/ModernButton.astro';
+
+const catalogLinks = {
+  seeMore: 'https://www.da-kong.com/_files/ugd/8d0f01_c57bb31686c448ac97f321ccb7dda603.pdf',
+  download: 'https://www.da-kong.com/_files/ugd/8d0f01_77d052ca60584c758e4fd23296786587.pdf',
+};
+---
+
+<Layout title="Products">
+  <ModernHero
+    title="Products"
+    subtitle="Inspiring materials help open the door for creative play."
+    image="/images/products-banner.jpg"
+    imageOpacity={0.18}
+    ctaText="See More"
+    ctaHref={catalogLinks.seeMore}
+    secondaryCtaText="Download Catalogue"
+    secondaryCtaHref={catalogLinks.download}
+  />
+
+  <!-- Product Highlights -->
+  <section class="section-padding">
+    <div class="site-container">
+      <div class="grid md:grid-cols-2 gap-8 mb-10">
+        <img src="/images/products-compo.jpg" alt="Product composition" class="w-full rounded-xl shadow" />
+        <img src="/images/products-2.jpg" alt="Product example" class="w-full rounded-xl shadow" />
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <img src="/images/products-3.jpg" alt="More products" class="w-full rounded-xl shadow" />
+        <div class="flex flex-col gap-6 justify-center">
+          <Heading as="h2" class="mb-2">Custom Kits</Heading>
+          <p class="text-lg text-gray-700">
+            We assemble complex bundles and kits on our in‑house lines—tailored to your brand and
+            audience. Our packaging engineers ensure everything ships retail‑ready.
+          </p>
+          <img src="/images/products-custom-kits.jpg" alt="Custom kits" class="w-full rounded-xl shadow" />
+          <div class="flex gap-4">
+            <ModernButton href={catalogLinks.download} variant="primary" arrow="right">Download Catalogue</ModernButton>
+            <ModernButton href={catalogLinks.seeMore} variant="outline">See More</ModernButton>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
