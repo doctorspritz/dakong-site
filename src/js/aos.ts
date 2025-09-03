@@ -22,8 +22,52 @@
  */
 
 // Modules & helpers
-import debounce from "lodash.debounce";
-import throttle from "lodash.throttle";
+// Lightweight local debounce/throttle to avoid external deps
+function debounce<T extends (...args: any[]) => void>(
+  fn: T,
+  wait: number,
+  immediate = false,
+): (...args: Parameters<T>) => void {
+  let timeout: ReturnType<typeof setTimeout> | null = null;
+  return (...args: Parameters<T>) => {
+    const callNow = immediate && !timeout;
+    if (timeout) clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      timeout = null;
+      if (!immediate) fn(...args);
+    }, wait);
+    if (callNow) fn(...args);
+  };
+}
+
+function throttle<T extends (...args: any[]) => void>(
+  fn: T,
+  wait: number,
+): (...args: Parameters<T>) => void {
+  let last = 0;
+  let timeout: ReturnType<typeof setTimeout> | null = null;
+  let trailingArgs: Parameters<T> | null = null;
+  return (...args: Parameters<T>) => {
+    const now = Date.now();
+    const remaining = wait - (now - last);
+    trailingArgs = args;
+    if (remaining <= 0) {
+      if (timeout) {
+        clearTimeout(timeout);
+        timeout = null;
+      }
+      last = now;
+      fn(...args);
+    } else if (!timeout) {
+      timeout = setTimeout(() => {
+        last = Date.now();
+        timeout = null;
+        if (trailingArgs) fn(...trailingArgs);
+        trailingArgs = null;
+      }, remaining);
+    }
+  };
+}
 
 import { type AOSDefaultOptions, type AOSElement } from "./helpers/aosTypes";
 import detect from "./helpers/detector";

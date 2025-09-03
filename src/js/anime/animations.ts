@@ -1,4 +1,4 @@
-import anime from "animejs/lib/anime.es.js";
+import { animate } from "animejs";
 
 import { type AnimeOptions } from "../helpers/aosTypes";
 
@@ -26,7 +26,7 @@ export const getAnimation = (
 		// fade animations
 		switch (animationName) {
 			case "fade-in":
-				animation = anime({
+				animation = animate({
 					targets: element,
 					opacity: [0, 1],
 					duration: duration,
@@ -37,7 +37,7 @@ export const getAnimation = (
 				});
 				break;
 			case "fade-up":
-				animation = anime({
+				animation = animate({
 					targets: element,
 					opacity: [0, 1],
 					translateY: [distance, 0],
@@ -49,7 +49,7 @@ export const getAnimation = (
 				});
 				break;
 			case "fade-down":
-				animation = anime({
+				animation = animate({
 					targets: element,
 					opacity: [0, 1],
 					translateY: [-1 * distance, 0],
@@ -61,7 +61,7 @@ export const getAnimation = (
 				});
 				break;
 			case "fade-left":
-				animation = anime({
+				animation = animate({
 					targets: element,
 					opacity: [0, 1],
 					translateX: [distance, 0],
@@ -73,7 +73,7 @@ export const getAnimation = (
 				});
 				break;
 			case "fade-right":
-				animation = anime({
+				animation = animate({
 					targets: element,
 					opacity: [0, 1],
 					translateX: [-1 * distance, 0],
@@ -85,7 +85,7 @@ export const getAnimation = (
 				});
 				break;
 			case "fade-up-right":
-				animation = anime({
+				animation = animate({
 					targets: element,
 					opacity: [0, 1],
 					translateX: [-1 * distance, 0],
@@ -98,7 +98,7 @@ export const getAnimation = (
 				});
 				break;
 			case "fade-up-left":
-				animation = anime({
+				animation = animate({
 					targets: element,
 					opacity: [0, 1],
 					translateX: [distance, 0],
@@ -111,7 +111,7 @@ export const getAnimation = (
 				});
 				break;
 			case "fade-down-right":
-				animation = anime({
+				animation = animate({
 					targets: element,
 					opacity: [0, 1],
 					translateX: [-1 * distance, 0],
@@ -124,7 +124,7 @@ export const getAnimation = (
 				});
 				break;
 			case "fade-down-left":
-				animation = anime({
+				animation = animate({
 					targets: element,
 					opacity: [0, 1],
 					translateX: [distance, 0],
@@ -138,7 +138,7 @@ export const getAnimation = (
 				break;
 			default:
 				// default is fade-in
-				animation = anime({
+				animation = animate({
 					targets: element,
 					opacity: [0, 1],
 					duration: duration,
@@ -153,7 +153,7 @@ export const getAnimation = (
 		// zoom animations
 		switch (animationName) {
 			case "zoom-in":
-				animation = anime({
+				animation = animate({
 					targets: element,
 					opacity: [0, 1],
 					scale: [0.6, 1],
@@ -165,7 +165,7 @@ export const getAnimation = (
 				});
 				break;
 			case "zoom-in-up":
-				animation = anime({
+				animation = animate({
 					targets: element,
 					opacity: [0, 1],
 					scale: [0.6, 1],
@@ -178,7 +178,7 @@ export const getAnimation = (
 				});
 				break;
 			case "zoom-in-down":
-				animation = anime({
+				animation = animate({
 					targets: element,
 					opacity: [0, 1],
 					scale: [0.6, 1],
@@ -191,7 +191,7 @@ export const getAnimation = (
 				});
 				break;
 			case "zoom-in-left":
-				animation = anime({
+				animation = animate({
 					targets: element,
 					opacity: [0, 1],
 					scale: [0.6, 1],
@@ -204,7 +204,7 @@ export const getAnimation = (
 				});
 				break;
 			case "zoom-in-right":
-				animation = anime({
+				animation = animate({
 					targets: element,
 					opacity: [0, 1],
 					scale: [0.6, 1],
@@ -217,7 +217,7 @@ export const getAnimation = (
 				});
 				break;
 			case "zoom-out":
-				animation = anime({
+				animation = animate({
 					targets: element,
 					opacity: [0, 1],
 					scale: [1.2, 1],
@@ -229,7 +229,7 @@ export const getAnimation = (
 				});
 				break;
 			case "zoom-out-up":
-				animation = anime({
+				animation = animate({
 					targets: element,
 					opacity: [0, 1],
 					scale: [1.2, 1],
@@ -242,7 +242,7 @@ export const getAnimation = (
 				});
 				break;
 			case "zoom-out-down":
-				animation = anime({
+				animation = animate({
 					targets: element,
 					opacity: [0, 1],
 					scale: [1.2, 1],
@@ -255,7 +255,7 @@ export const getAnimation = (
 				});
 				break;
 			case "zoom-out-left":
-				animation = anime({
+				animation = animate({
 					targets: element,
 					opacity: [0, 1],
 					scale: [1.2, 1],
@@ -268,7 +268,7 @@ export const getAnimation = (
 				});
 				break;
 			case "zoom-out-right":
-				animation = anime({
+				animation = animate({
 					targets: element,
 					opacity: [0, 1],
 					scale: [1.2, 1],
@@ -421,7 +421,7 @@ export const getAnimation = (
 		}
 	} else {
 		// overall default is fade-in
-		animation = anime({
+		animation = animate({
 			targets: element,
 			opacity: [0, 1],
 			duration: duration,

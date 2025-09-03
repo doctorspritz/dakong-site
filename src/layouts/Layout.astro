@@ -31,14 +31,14 @@ const { title, description = 'Da Kong - Education and Custom Kit Production' } =
     <ScrollToTop />
 
     <script>
-      import AOS from '../js/aos/aos';
+      import AOS from '../js/aos';
 
       document.addEventListener('DOMContentLoaded', () => {
         AOS.init({
-          duration: 0.6,
-          once: false,
-          mirror: true,
-          distance: 30,
+          duration: 0.35,
+          once: true,
+          mirror: false,
+          distance: 8,
         });
       });
     </script>

@@ -144,28 +144,25 @@
     @apply py-16 md:py-20 lg:py-24;
   }
 
-  /* Glassmorphism card effect */
+  /* Subtle card */
   .glass-card {
-    @apply backdrop-blur-xl bg-white/70 dark:bg-gray-900/70 border border-white/20 dark:border-gray-800/20 shadow-2xl;
+    @apply bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow;
   }
 
   /* Gradient text effect */
   .text-gradient {
-    @apply bg-gradient-to-br from-primary-600 to-primary-400 bg-clip-text text-transparent;
+    @apply text-primary-400 dark:text-primary-300;
   }
 
   /* Modern card with hover effect */
   .modern-card {
-    @apply relative overflow-hidden bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 
-           shadow-lg transition-all duration-300 
-           hover:shadow-2xl hover:-translate-y-1 hover:border-primary-200 dark:hover:border-primary-800;
+    @apply relative overflow-hidden bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 
+           shadow transition-all duration-200;
   }
 
   /* Animated gradient background */
   .gradient-bg {
-    @apply bg-gradient-to-br from-primary-600 via-primary-500 to-accent;
-    background-size: 200% 200%;
-    animation: gradient-shift 8s ease infinite;
+    @apply bg-primary-600 dark:bg-primary-700;
   }
 
   /* Description text style */
@@ -223,16 +220,16 @@
 
   /* Hover lift effect */
   .hover-lift {
-    @apply transition-transform duration-300 hover:-translate-y-2;
+    @apply transition-transform duration-200 hover:-translate-y-0.5;
   }
 
   /* Glassmorphism backgrounds */
   .glass-light {
-    @apply backdrop-blur-md bg-white/60 dark:bg-gray-900/60;
+    @apply bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800;
   }
 
   .glass-heavy {
-    @apply backdrop-blur-2xl bg-white/80 dark:bg-gray-900/80;
+    @apply bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800;
   }
 
   /* Noise texture overlay */

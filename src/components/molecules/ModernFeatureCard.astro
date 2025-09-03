@@ -26,17 +26,11 @@ const colorClasses = {
 };
 ---
 
-<div class={`group modern-card p-8 ${className}`} data-aos="fade-up" data-aos-delay={delay}>
+<div class={`group modern-card p-8 ${className}`}>
   <!-- Icon container with gradient background -->
   {
     icon && (
-      <div
-        class={`
-      w-16 h-16 rounded-2xl bg-gradient-to-br ${colorClasses[color]} 
-      flex items-center justify-center mb-6 shadow-lg
-      group-hover:scale-110 transition-transform duration-300
-    `}
-      >
+      <div class={`w-16 h-16 rounded-2xl bg-primary-600 flex items-center justify-center mb-6 shadow` }>
         <Icon name={icon} class="w-8 h-8 text-white" />
       </div>
     )
@@ -51,15 +45,6 @@ const colorClasses = {
     {description}
   </p>
 
-  <!-- Hover accent line -->
-  <div
-    class={`
-    absolute bottom-0 left-0 right-0 h-1 
-    bg-gradient-to-r ${colorClasses[color]}
-    transform scale-x-0 group-hover:scale-x-100 
-    transition-transform duration-300 origin-left
-    rounded-b-2xl
-  `}
-  >
-  </div>
+  <!-- Subtle divider -->
+  <div class="absolute bottom-0 left-0 right-0 h-px bg-gray-200 dark:bg-gray-800" />
 </div>

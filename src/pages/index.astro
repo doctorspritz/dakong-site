@@ -72,7 +72,7 @@ const stats = [
   />
 
   <!-- Services Section with Modern Cards -->
-  <section class="section-padding bg-gray-50 dark:bg-gray-900/50">
+  <section class="section-padding bg-gray-50 dark:bg-gray-900/40">
     <div class="site-container">
       <div class="text-center mb-16">
         <span
@@ -81,13 +81,7 @@ const stats = [
         >
           What We Do
         </span>
-        <h2
-          class="mt-4 text-4xl md:text-5xl font-bold text-gradient"
-          data-aos="fade-up"
-          data-aos-delay="0.1"
-        >
-          Transformative Services
-        </h2>
+        <h2 class="mt-4 text-4xl md:text-5xl font-bold">Transformative Services</h2>
         <p
           class="mt-6 text-xl description max-w-3xl mx-auto"
           data-aos="fade-up"
@@ -114,6 +108,34 @@ const stats = [
     </div>
   </section>
 
+  <!-- Brand Collaboration (from original site) -->
+  <section id="brand-collaboration" class="section-padding bg-white">
+    <div class="site-container">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <img
+          src="https://static.wixstatic.com/media/8d0f01_8140a7c5ec8340b08ef9b553398f94f7~mv2.jpg"
+          alt="Brand Collaboration"
+          class="w-full rounded-2xl shadow"
+          data-aos="fade-right"
+        />
+        <div data-aos="fade-left">
+          <h2 class="text-4xl md:text-5xl font-bold text-primary-900 mb-6">Brand Collaboration</h2>
+          <p class="text-lg text-gray-700 mb-4">
+            Our global infrastructure allows us to provide end-to-end solutions, including product
+            development, manufacturing, packaging, and distribution.
+          </p>
+          <p class="text-lg text-gray-700 mb-8">
+            We have the ability to adapt to market trends and changes in demand to ensure our
+            clients' portfolios remain competitive.
+          </p>
+          <ModernButton href="/contact" variant="primary" size="md" arrow="right">
+            Start Collaboration
+          </ModernButton>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Features Section with Glass Cards -->
   <section class="section-padding relative overflow-hidden">
     <!-- Background decoration -->
@@ -135,12 +157,8 @@ const stats = [
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         {
           features.map((feature, index) => (
-            <div
-              class="glass-card rounded-2xl p-8 text-center hover-lift"
-              data-aos="zoom-in"
-              data-aos-delay={index * 0.1}
-            >
-              <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center shadow-lg">
+            <div class="glass-card rounded-2xl p-8 text-center">
+              <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-primary-600 flex items-center justify-center shadow">
                 <Icon name={feature.icon} class="w-10 h-10 text-white" />
               </div>
               <h3 class="text-xl font-bold mb-3">{feature.title}</h3>
@@ -152,16 +170,56 @@ const stats = [
     </div>
   </section>
 
+  <!-- Product Development & Custom Kits -->
+  <section id="product-development" class="section-padding bg-white">
+    <div class="site-container">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold text-primary-900 mb-6">
+          Product Development &<br />Custom Kits Production
+        </h2>
+        <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+          In the Da Kong factory, spanning across a vast 60,000 sq ft, we have efficiently
+          allocated the space, dedicating half of it to packaging operations while the remaining
+          half hosts assembly lines where custom kits are skillfully put together.
+        </p>
+      </div>
+      <img
+        src="https://static.wixstatic.com/media/8d0f01_cea05e20f9da408ab7edbb43368bc13e~mv2.png"
+        alt="Production"
+        class="w-full rounded-2xl shadow"
+        data-aos="zoom-in"
+      />
+    </div>
+  </section>
+
+  <!-- Sustainability -->
+  <section id="sustainability" class="section-padding bg-gray-50">
+    <div class="site-container">
+      <div class="text-center mb-10">
+        <h2 class="text-4xl md:text-5xl font-bold text-primary-900 mb-6">Sustainability</h2>
+        <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+          We have helped many companies achieve a more eco-friendly version of their product by
+          offering material substitutions and packaging optimizations that reduce waste and improve
+          recyclability.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <Card title="Eco Materials" description="Guidance on recyclable and biodegradable options." />
+        <Card title="Efficient Packaging" description="Redesign to minimize volume and waste." />
+        <Card title="Process Optimization" description="Lean operations to reduce energy use." />
+      </div>
+    </div>
+  </section>
+
   <!-- Stats Section -->
-  <section class="py-20 gradient-bg relative overflow-hidden">
-    <div class="absolute inset-0 noise-bg opacity-20"></div>
+  <section class="py-16 bg-primary-50 relative overflow-hidden">
     <div class="site-container relative z-10">
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
         {
           stats.map((stat, index) => (
-            <div class="text-center" data-aos="fade-up" data-aos-delay={index * 0.1}>
-              <div class="text-5xl md:text-6xl font-bold text-white mb-2">{stat.number}</div>
-              <div class="text-white/80 text-lg">{stat.label}</div>
+            <div class="text-center">
+              <div class="text-5xl md:text-6xl font-bold text-primary-900 mb-2">{stat.number}</div>
+              <div class="text-gray-700 text-lg">{stat.label}</div>
             </div>
           ))
         }
@@ -171,37 +229,15 @@ const stats = [
 
   <!-- CTA Section with Modern Design -->
   <section class="section-padding relative overflow-hidden">
-    <!-- Animated background shapes -->
-    <div class="absolute inset-0">
-      <div
-        class="absolute top-0 left-0 w-96 h-96 bg-primary-200 rounded-full blur-3xl opacity-20 animate-float"
-      >
-      </div>
-      <div
-        class="absolute bottom-0 right-0 w-96 h-96 bg-accent-primary/20 rounded-full blur-3xl animate-float"
-        style="animation-delay: 3s;"
-      >
-      </div>
-    </div>
 
     <div class="site-container relative z-10">
       <div class="glass-heavy rounded-3xl p-12 md:p-16 text-center">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-up">
-          Ready to <span class="text-gradient">Transform</span> Your Future?
-        </h2>
-        <p
-          class="text-xl description mb-10 max-w-2xl mx-auto"
-          data-aos="fade-up"
-          data-aos-delay="0.1"
-        >
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-primary-900">Ready to Transform Your Future?</h2>
+        <p class="text-xl description mb-10 max-w-2xl mx-auto">
           Join hundreds of organizations that trust Da Kong for their most critical projects.
         </p>
-        <div
-          class="flex flex-col sm:flex-row gap-4 justify-center"
-          data-aos="fade-up"
-          data-aos-delay="0.2"
-        >
-          <ModernButton href="/contact" variant="gradient" size="lg" arrow="right" glow>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <ModernButton href="/contact" variant="primary" size="lg" arrow="right">
             Start Your Journey
           </ModernButton>
           <ModernButton href="/services" variant="outline" size="lg"> Learn More </ModernButton>

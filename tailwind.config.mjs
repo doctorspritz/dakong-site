@@ -21,6 +21,8 @@ export default {
           light: '#3D9BE9',
           lighter: '#6A8DC3',
           dark: '#1a2160',
+          // Enables utilities like `text-primary-foreground`
+          foreground: 'var(--primary-foreground)',
         },
         secondary: {
           DEFAULT: '#116dff',
