@@ -50,12 +50,13 @@ const team = [
 
 <Layout title="About Us">
   <ModernHero
-    title="About Da Kong"
-    subtitle="DaKong Education believes in the pursuit of learning through hands‑on activities. Our mission is to provide dependable quality supplies that inspire young makers to exercise their imagination."
+    title="Forward‑thinking provider of educational & activity supplies."
+    subtitle="We offer customized manufacturing solutions for businesses and retailers to market products under their own brand name."
     ctaText="Start a Project"
     ctaHref="/contact"
     secondaryCtaText="Our Services"
     secondaryCtaHref="/services"
+    image="/images/about-banner.jpg"
   />
 
   <!-- Who We Are -->
@@ -65,13 +66,15 @@ const team = [
         <Heading as="h2" gradient class="mb-8 text-center">Who We Are</Heading>
         <div class="prose prose-lg mx-auto text-gray-600">
           <p class="mb-6">
-            Da Kong is a trusted partner for customized manufacturing and education solutions. From
-            concept to delivery, we provide product development, custom kit assembly, packaging and
-            end‑to‑end distribution for organizations of all sizes.
+            We were founded as a consumer products sourcing company in 2007 and have evolved into an
+            innovative provider of children’s educational and activity supplies. We offer
+            customized manufacturing solutions for businesses and retailers looking to market
+            products under their own brand name.
           </p>
           <p class="mb-6">
-            Our global infrastructure and responsive operating model allow us to adapt to market
-            trends and changes in demand, ensuring our clients’ portfolios remain competitive.
+            From concept to delivery, we provide product development, custom kit assembly, packaging
+            and end‑to‑end distribution—all designed to move with market trends and keep your
+            portfolio competitive.
           </p>
           <p>
             We exist to make great ideas tangible—reliably, responsibly and at scale.
@@ -85,15 +88,16 @@ const team = [
   <section class="section-padding bg-gray-50">
     <div class="container-custom">
       <div class="text-center mb-12">
-        <Heading as="h2" class="mb-4">What We Do</Heading>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">End‑to‑end capabilities built for speed and quality.</p>
+        <Heading as="h2" class="mb-4">End‑to‑End Solutions for Private Label</Heading>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Capabilities built for speed, quality and reliability.</p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <Card title="Product Development" description="Collaborative design, prototyping and sourcing." />
-        <Card title="Custom Kits Production" description="Scalable assembly lines for tailored kits." />
-        <Card title="Packaging" description="Retail‑ready packaging engineered for protection and appeal." />
-        <Card title="Distribution" description="Global logistics for on‑time fulfillment." />
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <Card title="01 · Product Development" description="We speak your creative language and develop products in line with market trends." />
+        <Card title="02 · Packaging & Labeling" description="Our packaging engineers develop appropriate packaging and labeling." />
+        <Card title="03 · Manufacturing & Kitting" description="In‑house assembly lines; we excel at complex bundles and kits." />
+        <Card title="04 · Quality & Safety" description="On‑the‑ground quality oversight with routine CPSIA, REACH, EN71, ASTM F‑963 testing." />
+        <Card title="05 · Logistics & Distribution" description="Optimized freight configurations; most orders ship via our US 3PL in Kentucky." />
       </div>
     </div>
   </section>
@@ -117,6 +121,53 @@ const team = [
           </div>
         ))}
       </div>
+    </div>
+  </section>
+
+  <!-- Flexible Manufacturing -->
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <Heading as="h2" class="mb-4">Flexible Manufacturing</Heading>
+        <p class="text-lg text-gray-700 mb-4">
+          We are customer‑centric and flexible. Our vast operational infrastructure allows us to
+          fulfill a variety of requests. We adapt to high‑scale production runs at our facility in
+          China, or small‑batch kitting through our US affiliate in Kentucky.
+        </p>
+        <p>
+          <a href="https://www.discoverhowlett.com/" class="text-primary font-medium underline" target="_blank" rel="noopener">Read more about our US capabilities</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ethical Toy Program -->
+  <section class="section-padding bg-gray-50">
+    <div class="container-custom">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <Heading as="h2" class="mb-4">Ethical Toy Program</Heading>
+          <p class="text-lg text-gray-700">
+            We adhere to international labor law standards. Our factory in China, Dong Guan Da Kong
+            Packaging Limited, holds a valid ICTI Ethical Toy Program Seal of Compliance.
+          </p>
+        </div>
+        <div class="flex justify-center lg:justify-end">
+          <img src="/images/icti-badge.png" alt="ICTI Ethical Toy Program Seal of Compliance" class="h-16 w-auto" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder Quote -->
+  <section class="section-padding">
+    <div class="site-container max-w-4xl mx-auto">
+      <blockquote class="text-2xl leading-relaxed text-gray-800 border-l-4 border-primary pl-6">
+        “More than ever it takes compelling activities to get children away from the screen. Our
+        goal is to produce safe, dependable supplies that are inspiring to use. To do this we take
+        an active role in each step of the product lifecycle.”
+      </blockquote>
+      <p class="mt-4 text-gray-600">— Miles Leach, Founder</p>
     </div>
   </section>
 
