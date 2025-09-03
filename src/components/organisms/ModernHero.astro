@@ -10,6 +10,7 @@ export interface Props {
   secondaryCtaText?: string;
   secondaryCtaHref?: string;
   image?: string;
+  imageOpacity?: number; // 0..1
   class?: string;
 }
 
@@ -21,6 +22,7 @@ const {
   secondaryCtaText,
   secondaryCtaHref,
   image,
+  imageOpacity = 0.12,
   class: className = '',
 } = Astro.props;
 ---
@@ -78,5 +80,9 @@ const {
     </div>
   </div>
 
-  {image && (<div class="absolute inset-0 z-0 opacity-10"><img src={image} alt="" class="w-full h-full object-cover" /></div>)}
+  {image && (
+    <div class="absolute inset-0 z-0" style={{ opacity: String(imageOpacity) }}>
+      <img src={image} alt="" class="w-full h-full object-cover" />
+    </div>
+  )}
 </section>
