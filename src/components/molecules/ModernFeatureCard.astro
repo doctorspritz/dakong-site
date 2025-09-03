@@ -1,0 +1,65 @@
+---
+import { Icon } from 'astro-icon/components';
+
+export interface Props {
+  icon?: string;
+  title: string;
+  description: string;
+  color?: 'primary' | 'secondary' | 'accent';
+  class?: string;
+  delay?: number;
+}
+
+const {
+  icon,
+  title,
+  description,
+  color = 'primary',
+  class: className = '',
+  delay = 0,
+} = Astro.props;
+
+const colorClasses = {
+  primary: 'from-primary-500 to-primary-600',
+  secondary: 'from-secondary to-blue-600',
+  accent: 'from-accent-primary to-orange-600',
+};
+---
+
+<div class={`group modern-card p-8 ${className}`} data-aos="fade-up" data-aos-delay={delay}>
+  <!-- Icon container with gradient background -->
+  {
+    icon && (
+      <div
+        class={`
+      w-16 h-16 rounded-2xl bg-gradient-to-br ${colorClasses[color]} 
+      flex items-center justify-center mb-6 shadow-lg
+      group-hover:scale-110 transition-transform duration-300
+    `}
+      >
+        <Icon name={icon} class="w-8 h-8 text-white" />
+      </div>
+    )
+  }
+
+  <!-- Content -->
+  <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">
+    {title}
+  </h3>
+
+  <p class="description">
+    {description}
+  </p>
+
+  <!-- Hover accent line -->
+  <div
+    class={`
+    absolute bottom-0 left-0 right-0 h-1 
+    bg-gradient-to-r ${colorClasses[color]}
+    transform scale-x-0 group-hover:scale-x-100 
+    transition-transform duration-300 origin-left
+    rounded-b-2xl
+  `}
+  >
+  </div>
+</div>

@@ -1,0 +1,15 @@
+---
+export interface Props {
+  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  class?: string;
+  gradient?: boolean;
+}
+
+const { as: Tag = 'h2', class: className = '', gradient = false } = Astro.props;
+
+const gradientClass = gradient ? 'text-gradient' : '';
+---
+
+<Tag class={`font-bold ${gradientClass} ${className}`}>
+  <slot />
+</Tag>

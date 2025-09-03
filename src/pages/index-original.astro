@@ -1,0 +1,138 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/organisms/Hero.astro';
+import Card from '../components/molecules/Card.astro';
+import Button from '../components/atoms/Button.astro';
+import Heading from '../components/atoms/Heading.astro';
+
+const services = [
+  {
+    title: 'Educational Solutions',
+    description: 'Comprehensive educational programs and resources tailored to your needs.',
+    image: '/images/hero-banner.png',
+  },
+  {
+    title: 'Custom Kit Production',
+    description: 'High-quality custom kits designed and manufactured to your specifications.',
+    image: '/images/hero-banner.png',
+  },
+  {
+    title: 'Consulting Services',
+    description: 'Expert consultation to help you achieve your educational and production goals.',
+    image: '/images/hero-banner.png',
+  },
+];
+
+const features = [
+  {
+    title: 'Quality Materials',
+    description: 'We use only the finest materials in our production process.',
+    icon: '✓',
+  },
+  {
+    title: 'Fast Turnaround',
+    description: 'Quick production and delivery times to meet your deadlines.',
+    icon: '⚡',
+  },
+  {
+    title: 'Custom Design',
+    description: 'Fully customizable solutions tailored to your requirements.',
+    icon: '🎨',
+  },
+  {
+    title: 'Expert Support',
+    description: 'Dedicated support team to assist you every step of the way.',
+    icon: '💡',
+  },
+];
+---
+
+<Layout title="Home">
+  <Hero
+    title="Welcome to Da Kong"
+    subtitle="Your trusted partner in education and custom kit production"
+    ctaText="Get Started"
+    ctaHref="/contact"
+    secondaryCtaText="Learn More"
+    secondaryCtaHref="/about"
+    image="/images/hero-banner.png"
+  />
+
+  <!-- Services Section -->
+  <section class="section-padding bg-gray-50">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <Heading as="h2" gradient class="mb-4">Our Services</Heading>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          We provide comprehensive solutions for education and custom production needs.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          services.map((service) => (
+            <Card
+              title={service.title}
+              description={service.description}
+              image={service.image}
+              href="/services"
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <Heading as="h2" class="mb-4">Why Choose Da Kong</Heading>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Experience excellence with our comprehensive range of features and benefits.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {
+          features.map((feature) => (
+            <div class="text-center">
+              <div class="text-4xl mb-4">{feature.icon}</div>
+              <h3 class="text-xl font-semibold mb-2">{feature.title}</h3>
+              <p class="text-gray-600">{feature.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding bg-gradient-to-br from-primary to-primary-light text-white">
+    <div class="container-custom text-center">
+      <Heading as="h2" class="mb-4 text-white">Ready to Get Started?</Heading>
+      <p class="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
+        Join thousands of satisfied customers who trust Da Kong for their educational and production
+        needs.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button
+          href="/contact"
+          variant="primary"
+          size="lg"
+          class="bg-white text-primary hover:bg-gray-100"
+        >
+          Contact Us Today
+        </Button>
+        <Button
+          href="/services"
+          variant="outline"
+          size="lg"
+          class="border-white text-white hover:bg-white hover:text-primary"
+        >
+          Explore Services
+        </Button>
+      </div>
+    </div>
+  </section>
+</Layout>

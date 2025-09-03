@@ -1,0 +1,158 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/organisms/Hero.astro';
+import Card from '../components/molecules/Card.astro';
+import Heading from '../components/atoms/Heading.astro';
+import Button from '../components/atoms/Button.astro';
+
+const services = [
+  {
+    title: 'Educational Program Development',
+    description:
+      "Custom-designed educational programs tailored to your institution's unique needs and goals.",
+    features: ['Curriculum Design', 'Learning Materials', 'Assessment Tools', 'Teacher Training'],
+  },
+  {
+    title: 'Custom Kit Production',
+    description:
+      'High-quality production of custom educational and training kits for various industries.',
+    features: [
+      'Design Consultation',
+      'Prototype Development',
+      'Mass Production',
+      'Quality Assurance',
+    ],
+  },
+  {
+    title: 'Digital Learning Solutions',
+    description:
+      'Modern e-learning platforms and digital resources to enhance educational experiences.',
+    features: ['Online Courses', 'Interactive Content', 'Learning Management', 'Progress Tracking'],
+  },
+  {
+    title: 'Consulting Services',
+    description:
+      'Expert guidance to help you navigate educational challenges and optimize your programs.',
+    features: [
+      'Needs Assessment',
+      'Strategic Planning',
+      'Implementation Support',
+      'Performance Evaluation',
+    ],
+  },
+  {
+    title: 'Material Supply',
+    description: 'Comprehensive supply of educational materials and resources for institutions.',
+    features: ['Bulk Orders', 'Custom Sourcing', 'Inventory Management', 'Fast Delivery'],
+  },
+  {
+    title: 'Training & Workshops',
+    description: 'Professional development programs and workshops for educators and staff.',
+    features: [
+      'On-site Training',
+      'Virtual Workshops',
+      'Certification Programs',
+      'Ongoing Support',
+    ],
+  },
+];
+
+const process = [
+  { step: '01', title: 'Consultation', description: 'We discuss your needs and objectives' },
+  { step: '02', title: 'Planning', description: 'Develop a customized solution strategy' },
+  { step: '03', title: 'Implementation', description: 'Execute the plan with precision and care' },
+  { step: '04', title: 'Support', description: 'Provide ongoing support and optimization' },
+];
+---
+
+<Layout title="Services">
+  <Hero
+    title="Our Services"
+    subtitle="Comprehensive solutions for all your educational and production needs"
+  />
+
+  <!-- Services Grid -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <Heading as="h2" gradient class="mb-4">What We Offer</Heading>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Explore our wide range of services designed to help you succeed.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          services.map((service) => (
+            <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+              <h3 class="text-2xl font-bold mb-3 text-primary">{service.title}</h3>
+              <p class="text-gray-600 mb-4">{service.description}</p>
+              <ul class="space-y-2">
+                {service.features.map((feature) => (
+                  <li class="flex items-center text-sm text-gray-700">
+                    <span class="text-green-500 mr-2">✓</span>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="section-padding bg-gray-50">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <Heading as="h2" class="mb-4">Our Process</Heading>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          A streamlined approach to deliver exceptional results.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {
+          process.map((item) => (
+            <div class="text-center">
+              <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-primary to-primary-light rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                {item.step}
+              </div>
+              <h3 class="text-xl font-semibold mb-2">{item.title}</h3>
+              <p class="text-gray-600">{item.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <Heading as="h2" gradient class="mb-8">Why Choose Da Kong?</Heading>
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+          <div>
+            <div class="text-4xl font-bold text-primary mb-2">10+</div>
+            <p class="text-gray-600">Years of Experience</p>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-primary mb-2">500+</div>
+            <p class="text-gray-600">Happy Clients</p>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-primary mb-2">1000+</div>
+            <p class="text-gray-600">Projects Completed</p>
+          </div>
+        </div>
+        <p class="text-lg text-gray-600 mb-8">
+          With a proven track record of success and a commitment to excellence, Da Kong is your
+          trusted partner for educational and production solutions.
+        </p>
+        <Button href="/contact" variant="primary" size="lg"> Start Your Project </Button>
+      </div>
+    </div>
+  </section>
+</Layout>

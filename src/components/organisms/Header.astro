@@ -1,0 +1,76 @@
+---
+import Logo from '../atoms/Logo.astro';
+import NavLink from '../molecules/NavLink.astro';
+import Button from '../atoms/Button.astro';
+
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/services', label: 'Services' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
+  <nav class="container-custom">
+    <div class="flex items-center justify-between py-4">
+      <Logo class="h-12 md:h-16" />
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        {
+          navItems.map((item) => (
+            <NavLink href={item.href} isActive={currentPath === item.href}>
+              {item.label}
+            </NavLink>
+          ))
+        }
+        <Button href="/contact" variant="primary" size="sm"> Get Started </Button>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden p-2 text-gray-700 hover:text-primary transition-colors"
+        aria-label="Toggle menu"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="md:hidden hidden pb-4">
+      <div class="flex flex-col space-y-2">
+        {
+          navItems.map((item) => (
+            <NavLink
+              href={item.href}
+              isActive={currentPath === item.href}
+              class="block w-full text-left"
+            >
+              {item.label}
+            </NavLink>
+          ))
+        }
+        <Button href="/contact" variant="primary" size="sm" class="mt-4"> Get Started </Button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+</script>

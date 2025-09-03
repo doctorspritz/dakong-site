@@ -1,16 +1,212 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import ModernHero from '../components/organisms/ModernHero.astro';
+import ModernFeatureCard from '../components/molecules/ModernFeatureCard.astro';
+import Card from '../components/molecules/Card.astro';
+import ModernButton from '../components/atoms/ModernButton.astro';
+import Heading from '../components/atoms/Heading.astro';
+import { Icon } from 'astro-icon/components';
 
+const services = [
+  {
+    icon: 'tabler/school',
+    title: 'Educational Solutions',
+    description:
+      'Cutting-edge educational programs designed to inspire and empower learners at every level.',
+    color: 'primary' as const,
+  },
+  {
+    icon: 'tabler/package',
+    title: 'Custom Kit Production',
+    description:
+      'Premium quality custom kits engineered with precision and delivered with excellence.',
+    color: 'secondary' as const,
+  },
+  {
+    icon: 'tabler/bulb',
+    title: 'Innovation Consulting',
+    description: 'Strategic insights and expert guidance to transform your vision into reality.',
+    color: 'accent' as const,
+  },
+];
+
+const features = [
+  {
+    icon: 'tabler/diamond',
+    title: 'Premium Quality',
+    description: 'Only the finest materials and craftsmanship in every product.',
+  },
+  {
+    icon: 'tabler/bolt',
+    title: 'Lightning Fast',
+    description: 'Rapid turnaround times without compromising on quality.',
+  },
+  {
+    icon: 'tabler/palette',
+    title: 'Custom Design',
+    description: 'Tailored solutions that perfectly match your unique requirements.',
+  },
+  {
+    icon: 'tabler/shield-check',
+    title: 'Guaranteed Excellence',
+    description: '100% satisfaction guarantee on all our products and services.',
+  },
+];
+
+const stats = [
+  { number: '500+', label: 'Happy Clients' },
+  { number: '10+', label: 'Years Experience' },
+  { number: '1000+', label: 'Projects Completed' },
+  { number: '99%', label: 'Client Satisfaction' },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Home">
+  <ModernHero
+    title="Welcome to Da Kong"
+    subtitle="Pioneering excellence in education and custom production with innovative solutions that transform possibilities into achievements"
+    ctaText="Get Started"
+    ctaHref="/contact"
+    secondaryCtaText="Explore Solutions"
+    secondaryCtaHref="/services"
+  />
+
+  <!-- Services Section with Modern Cards -->
+  <section class="section-padding bg-gray-50 dark:bg-gray-900/50">
+    <div class="site-container">
+      <div class="text-center mb-16">
+        <span
+          class="text-sm font-semibold text-primary uppercase tracking-wider"
+          data-aos="fade-up"
+        >
+          What We Do
+        </span>
+        <h2
+          class="mt-4 text-4xl md:text-5xl font-bold text-gradient"
+          data-aos="fade-up"
+          data-aos-delay="0.1"
+        >
+          Transformative Services
+        </h2>
+        <p
+          class="mt-6 text-xl description max-w-3xl mx-auto"
+          data-aos="fade-up"
+          data-aos-delay="0.2"
+        >
+          Discover our comprehensive suite of solutions designed to elevate your organization to new
+          heights.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          services.map((service, index) => (
+            <ModernFeatureCard
+              icon={service.icon}
+              title={service.title}
+              description={service.description}
+              color={service.color}
+              delay={index * 0.1}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section with Glass Cards -->
+  <section class="section-padding relative overflow-hidden">
+    <!-- Background decoration -->
+    <div
+      class="absolute inset-0 bg-gradient-to-br from-primary-50 to-transparent dark:from-primary-900/10"
+    >
+    </div>
+
+    <div class="site-container relative z-10">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-up">
+          Why Choose <span class="text-gradient">Da Kong</span>
+        </h2>
+        <p class="text-xl description max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="0.1">
+          Experience the difference with our commitment to excellence and innovation.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {
+          features.map((feature, index) => (
+            <div
+              class="glass-card rounded-2xl p-8 text-center hover-lift"
+              data-aos="zoom-in"
+              data-aos-delay={index * 0.1}
+            >
+              <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center shadow-lg">
+                <Icon name={feature.icon} class="w-10 h-10 text-white" />
+              </div>
+              <h3 class="text-xl font-bold mb-3">{feature.title}</h3>
+              <p class="description">{feature.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-20 gradient-bg relative overflow-hidden">
+    <div class="absolute inset-0 noise-bg opacity-20"></div>
+    <div class="site-container relative z-10">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        {
+          stats.map((stat, index) => (
+            <div class="text-center" data-aos="fade-up" data-aos-delay={index * 0.1}>
+              <div class="text-5xl md:text-6xl font-bold text-white mb-2">{stat.number}</div>
+              <div class="text-white/80 text-lg">{stat.label}</div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section with Modern Design -->
+  <section class="section-padding relative overflow-hidden">
+    <!-- Animated background shapes -->
+    <div class="absolute inset-0">
+      <div
+        class="absolute top-0 left-0 w-96 h-96 bg-primary-200 rounded-full blur-3xl opacity-20 animate-float"
+      >
+      </div>
+      <div
+        class="absolute bottom-0 right-0 w-96 h-96 bg-accent-primary/20 rounded-full blur-3xl animate-float"
+        style="animation-delay: 3s;"
+      >
+      </div>
+    </div>
+
+    <div class="site-container relative z-10">
+      <div class="glass-heavy rounded-3xl p-12 md:p-16 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-up">
+          Ready to <span class="text-gradient">Transform</span> Your Future?
+        </h2>
+        <p
+          class="text-xl description mb-10 max-w-2xl mx-auto"
+          data-aos="fade-up"
+          data-aos-delay="0.1"
+        >
+          Join hundreds of organizations that trust Da Kong for their most critical projects.
+        </p>
+        <div
+          class="flex flex-col sm:flex-row gap-4 justify-center"
+          data-aos="fade-up"
+          data-aos-delay="0.2"
+        >
+          <ModernButton href="/contact" variant="gradient" size="lg" arrow="right" glow>
+            Start Your Journey
+          </ModernButton>
+          <ModernButton href="/services" variant="outline" size="lg"> Learn More </ModernButton>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

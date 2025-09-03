@@ -1,0 +1,260 @@
+@import url('./fonts.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* animations */
+@import 'tw-animate-css';
+
+/* theme-specific imports */
+@import './aos.css' layer(utilities);
+@import './buttons.css' layer(components);
+
+:root {
+  /* Da Kong Brand Colors - Modern Interpretation */
+  --color-primary-50: #e8eaf6;
+  --color-primary-100: #c5cae9;
+  --color-primary-200: #9fa8da;
+  --color-primary-300: #7986cb;
+  --color-primary-400: #5c6bc0;
+  --color-primary-500: #3f51b5;
+  --color-primary-600: #3949ab;
+  --color-primary-700: #303f9f;
+  --color-primary-800: #283593;
+  --color-primary-900: #1a237e;
+  --color-primary-950: #0d1452;
+
+  /* Base/Neutral Colors */
+  --color-base-50: #fafafa;
+  --color-base-100: #f5f5f5;
+  --color-base-200: #eeeeee;
+  --color-base-300: #e0e0e0;
+  --color-base-400: #bdbdbd;
+  --color-base-500: #9e9e9e;
+  --color-base-600: #757575;
+  --color-base-700: #616161;
+  --color-base-800: #424242;
+  --color-base-900: #212121;
+  --color-base-950: #0a0a0a;
+
+  /* Accent Colors */
+  --color-accent-primary: #9e3b1b;
+  --color-accent-secondary: #116dff;
+  --color-accent-alt: #993500;
+
+  /* Component Colors */
+  --background: var(--color-base-50);
+  --foreground: var(--color-base-950);
+  --card: var(--color-base-50);
+  --card-foreground: var(--color-base-950);
+  --popover: var(--color-base-50);
+  --popover-foreground: var(--color-base-950);
+  --primary: var(--color-primary-600);
+  --primary-foreground: var(--color-base-50);
+  --secondary: var(--color-base-950);
+  --secondary-foreground: var(--color-base-50);
+  --muted: var(--color-base-100);
+  --muted-foreground: var(--color-base-700);
+  --accent: var(--color-primary-600);
+  --accent-foreground: var(--color-base-50);
+  --border: var(--color-base-200);
+  --input: var(--color-base-200);
+  --outline: var(--color-primary-600);
+
+  /* Spacing and Sizing */
+  --default-transition-duration: 0.3s;
+  --radius: 0.75rem;
+  --spacing: 0.25rem;
+}
+
+.dark {
+  --background: var(--color-base-950);
+  --foreground: var(--color-base-50);
+  --card: var(--color-base-900);
+  --card-foreground: var(--color-base-50);
+  --popover: var(--color-base-900);
+  --popover-foreground: var(--color-base-50);
+  --primary: var(--color-primary-500);
+  --muted: var(--color-base-800);
+  --muted-foreground: var(--color-base-300);
+  --accent: var(--color-primary-500);
+  --border: var(--color-base-800);
+  --input: var(--color-base-800);
+}
+
+@layer base {
+  body {
+    @apply bg-white text-gray-900 antialiased dark:bg-gray-950 dark:text-white;
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display font-bold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl;
+  }
+
+  h2 {
+    @apply text-3xl sm:text-4xl md:text-5xl;
+  }
+
+  h3 {
+    @apply text-2xl sm:text-3xl md:text-4xl;
+  }
+
+  h4 {
+    @apply text-xl sm:text-2xl md:text-3xl;
+  }
+
+  h5 {
+    @apply text-lg sm:text-xl md:text-2xl;
+  }
+
+  h6 {
+    @apply text-base sm:text-lg md:text-xl;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Selection colors */
+  ::selection {
+    @apply bg-primary text-primary-foreground;
+  }
+}
+
+@layer components {
+  .site-container {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+
+  /* Glassmorphism card effect */
+  .glass-card {
+    @apply backdrop-blur-xl bg-white/70 dark:bg-gray-900/70 border border-white/20 dark:border-gray-800/20 shadow-2xl;
+  }
+
+  /* Gradient text effect */
+  .text-gradient {
+    @apply bg-gradient-to-br from-primary-600 to-primary-400 bg-clip-text text-transparent;
+  }
+
+  /* Modern card with hover effect */
+  .modern-card {
+    @apply relative overflow-hidden bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 
+           shadow-lg transition-all duration-300 
+           hover:shadow-2xl hover:-translate-y-1 hover:border-primary-200 dark:hover:border-primary-800;
+  }
+
+  /* Animated gradient background */
+  .gradient-bg {
+    @apply bg-gradient-to-br from-primary-600 via-primary-500 to-accent;
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
+  }
+
+  /* Description text style */
+  .description {
+    @apply text-gray-600 dark:text-gray-400 leading-relaxed;
+  }
+
+  /* Focus visible styles */
+  .focus-ring {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-950;
+  }
+}
+
+@layer utilities {
+  /* Animations */
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      box-shadow: 0 0 20px rgba(63, 81, 181, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(63, 81, 181, 0.8);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  /* Hover lift effect */
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-2;
+  }
+
+  /* Glassmorphism backgrounds */
+  .glass-light {
+    @apply backdrop-blur-md bg-white/60 dark:bg-gray-900/60;
+  }
+
+  .glass-heavy {
+    @apply backdrop-blur-2xl bg-white/80 dark:bg-gray-900/80;
+  }
+
+  /* Noise texture overlay */
+  .noise-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 35px,
+        rgba(255, 255, 255, 0.05) 35px,
+        rgba(255, 255, 255, 0.05) 70px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 35px,
+        rgba(0, 0, 0, 0.03) 35px,
+        rgba(0, 0, 0, 0.03) 70px
+      );
+    pointer-events: none;
+  }
+}

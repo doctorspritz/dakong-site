@@ -1,0 +1,146 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/organisms/Hero.astro';
+import Heading from '../components/atoms/Heading.astro';
+import Button from '../components/atoms/Button.astro';
+
+const values = [
+  {
+    title: 'Innovation',
+    description: 'We constantly push boundaries to deliver cutting-edge solutions.',
+  },
+  {
+    title: 'Quality',
+    description: 'Excellence in every product and service we provide.',
+  },
+  {
+    title: 'Integrity',
+    description: 'Honest and transparent in all our business dealings.',
+  },
+  {
+    title: 'Customer Focus',
+    description: 'Your success is our primary goal.',
+  },
+];
+
+const team = [
+  {
+    name: 'John Doe',
+    position: 'CEO & Founder',
+    image: '/images/logo.png',
+  },
+  {
+    name: 'Jane Smith',
+    position: 'Head of Production',
+    image: '/images/logo.png',
+  },
+  {
+    name: 'Mike Johnson',
+    position: 'Education Director',
+    image: '/images/logo.png',
+  },
+  {
+    name: 'Sarah Williams',
+    position: 'Customer Success Manager',
+    image: '/images/logo.png',
+  },
+];
+---
+
+<Layout title="About Us">
+  <Hero
+    title="About Da Kong"
+    subtitle="Leading the way in education and custom kit production since 2010"
+  />
+
+  <!-- Our Story Section -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <Heading as="h2" gradient class="mb-8 text-center">Our Story</Heading>
+        <div class="prose prose-lg mx-auto text-gray-600">
+          <p class="mb-6">
+            Da Kong was founded with a simple mission: to provide high-quality educational resources
+            and custom production solutions that empower organizations to achieve their goals.
+          </p>
+          <p class="mb-6">
+            Over the years, we've grown from a small startup to a trusted partner for hundreds of
+            educational institutions and businesses worldwide. Our commitment to quality,
+            innovation, and customer satisfaction has remained unwavering throughout our journey.
+          </p>
+          <p>
+            Today, we continue to push boundaries and set new standards in our industry, always
+            keeping our customers' needs at the heart of everything we do.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="section-padding bg-gray-50">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <Heading as="h2" class="mb-4">Our Values</Heading>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          These core values guide everything we do at Da Kong.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {
+          values.map((value) => (
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-xl font-semibold mb-3 text-primary">{value.title}</h3>
+              <p class="text-gray-600">{value.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <Heading as="h2" gradient class="mb-4">Meet Our Team</Heading>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Dedicated professionals committed to your success.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {
+          team.map((member) => (
+            <div class="text-center">
+              <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden bg-gray-200">
+                <img src={member.image} alt={member.name} class="w-full h-full object-cover" />
+              </div>
+              <h3 class="text-lg font-semibold">{member.name}</h3>
+              <p class="text-gray-600">{member.position}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding bg-primary text-white">
+    <div class="container-custom text-center">
+      <Heading as="h2" class="mb-4 text-white">Join Our Journey</Heading>
+      <p class="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
+        Partner with Da Kong and experience the difference quality makes.
+      </p>
+      <Button
+        href="/contact"
+        variant="primary"
+        size="lg"
+        class="bg-white text-primary hover:bg-gray-100"
+      >
+        Get in Touch
+      </Button>
+    </div>
+  </section>
+</Layout>

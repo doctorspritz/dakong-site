@@ -1,0 +1,19 @@
+---
+export interface Props {
+  class?: string;
+  width?: string;
+  height?: string;
+}
+
+const { class: className = '', width = '150', height = '75' } = Astro.props;
+---
+
+<a href="/" class={`inline-block ${className}`} aria-label="Da Kong Home">
+  <img
+    src="/images/logo.png"
+    alt="Da Kong Logo"
+    width={width}
+    height={height}
+    class="w-full h-auto"
+  />
+</a>

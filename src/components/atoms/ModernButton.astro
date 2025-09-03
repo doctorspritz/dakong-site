@@ -1,0 +1,79 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import { Icon } from 'astro-icon/components';
+
+type Props = HTMLAttributes<'a'> & {
+  type?: 'button' | 'submit' | 'reset' | null | undefined;
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'gradient';
+  size?: 'sm' | 'md' | 'lg';
+  arrow?: 'left' | 'right' | 'none';
+  disabled?: boolean;
+  glow?: boolean;
+};
+
+const {
+  variant = 'primary',
+  size = 'md',
+  arrow = 'none',
+  glow = false,
+  class: className,
+  ...rest
+} = Astro.props;
+
+let Component = 'button';
+if (Astro.props.href) {
+  Component = 'a';
+}
+---
+
+<Component
+  class:list={[
+    className,
+    `button group relative inline-flex items-center justify-center font-medium rounded-xl transition-all duration-300 focus-ring overflow-hidden`,
+    {
+      'button--primary': variant === 'primary',
+      'button--secondary': variant === 'secondary',
+      'button--outline': variant === 'outline',
+      'button--ghost': variant === 'ghost',
+      'button--gradient gradient-bg text-white shadow-lg hover:shadow-2xl': variant === 'gradient',
+    },
+    {
+      'px-3 py-1.5 text-sm': size === 'sm',
+      'px-5 py-2.5 text-base': size === 'md',
+      'px-7 py-3.5 text-lg': size === 'lg',
+    },
+    {
+      'animate-pulse-glow': glow,
+    },
+  ]}
+  {...rest}
+>
+  <!-- Hover effect overlay -->
+  {
+    variant === 'gradient' && (
+      <span class="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+    )
+  }
+
+  {
+    arrow === 'left' && (
+      <Icon
+        name="tabler/arrow-narrow-left"
+        class="mr-2 h-[1.2em] w-[1.2em] transition-transform duration-300 group-hover:-translate-x-1"
+      />
+    )
+  }
+
+  <span class="relative z-10">
+    <slot />
+  </span>
+
+  {
+    arrow === 'right' && (
+      <Icon
+        name="tabler/arrow-narrow-right"
+        class="ml-2 h-[1.2em] w-[1.2em] transition-transform duration-300 group-hover:translate-x-1"
+      />
+    )
+  }
+</Component>
