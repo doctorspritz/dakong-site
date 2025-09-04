@@ -57,7 +57,7 @@ export default {
       },
       fontFamily: {
         sans: ['Inter Variable', 'Inter', 'system-ui', 'sans-serif'],
-        display: ['Inter Variable', 'Inter', 'system-ui', 'sans-serif'],
+        display: ['Playfair Display', 'Inter Variable', 'Inter', 'system-ui', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
