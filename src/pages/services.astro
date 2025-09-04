@@ -1,32 +1,14 @@
----
 import Layout from '../layouts/Layout.astro';
 import ModernHero from '../components/organisms/ModernHero.astro';
 import Heading from '../components/atoms/Heading.astro';
 import ModernButton from '../components/atoms/ModernButton.astro';
-import Card from '../components/molecules/Card.astro';
-import Heading from '../components/atoms/Heading.astro';
-import Button from '../components/atoms/Button.astro';
-
-const steps = [
-  { title: '01 · Product Development', desc: 'We speak your creative language and develop products in line with market trends.' },
-  { title: '02 · Packaging & Labeling', desc: 'Our packaging engineers develop appropriate packaging and labeling.' },
-  { title: '03 · Manufacturing & Kitting', desc: 'In‑house assembly lines; we excel at complex bundles and kits.' },
-  { title: '04 · Quality & Safety', desc: 'On‑the‑ground oversight with routine CPSIA, REACH, EN71, ASTM F‑963 testing.' },
-  { title: '05 · Logistics & Distribution', desc: 'Optimized freight configurations; US 3PL in Kentucky for most orders.' },
-];
-
-const process = [
-  { step: '01', title: 'Consultation', description: 'We discuss your needs and objectives' },
-  { step: '02', title: 'Planning', description: 'Develop a customized solution strategy' },
-  { step: '03', title: 'Implementation', description: 'Execute the plan with precision and care' },
-  { step: '04', title: 'Support', description: 'Provide ongoing support and optimization' },
-];
+---
 ---
 
 <Layout title="Private Label Solutions">
   <ModernHero
-    title="Private Label Solutions"
-    subtitle="Productized services that simplify development, de‑risk manufacturing and accelerate time‑to‑market."
+    title="Your Private Label Partner"
+    subtitle="Productized services designed to simplify development, de‑risk manufacturing, and accelerate your time‑to‑market."
     ctaText="Get a Quote"
     ctaHref="/get-started"
     secondaryCtaText="See Our Process"
@@ -36,54 +18,71 @@ const process = [
     primaryGlow
   />
 
-  <!-- Services Grid -->
+  <section class="pt-4">
+    <div class="container-custom text-center text-sm text-gray-600">
+      Optimized for production runs of <strong>2,000+ units</strong>. Typical lead times: <strong>12–20 weeks</strong> from final approval.
+    </div>
+  </section>
+
+  <!-- Offerings -->
   <section class="section-padding">
     <div class="container-custom">
-      <div class="bg-primary-50 border border-primary-100 text-primary-900 rounded-xl p-4 mb-8 text-sm">
-        Optimized for production runs of <strong>2,000+ units</strong>. Typical lead times: <strong>12–20 weeks</strong> from final approval, depending on complexity.
-      </div>
       <div class="text-center mb-12">
-        <Heading as="h2" gradient class="mb-4">Productized Offerings</Heading>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Choose a path that matches your stage and goals.</p>
+        <Heading as="h2" gradient class="mb-4">Choose a Path That Matches Your Goals</Heading>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white rounded-lg shadow p-6 hover:shadow-md transition-shadow">
+        <!-- Launchpad -->
+        <div class="bg-white rounded-xl shadow p-6 hover:shadow-md transition-shadow">
+          <div class="badge mb-3">Best for: Startups & new launches</div>
           <h3 class="text-2xl font-bold mb-2 text-primary">DaKong Launchpad</h3>
-          <p class="text-gray-700 mb-3">End‑to‑end development for new products and kits — from concept and prototyping to compliant manufacturing and retail packaging.</p>
+          <p class="text-gray-700 mb-4">End‑to‑end development for new products and kits — from concept and prototyping to compliant manufacturing and retail packaging.</p>
+          <p class="font-semibold mb-2">Key Deliverables:</p>
           <ul class="list-disc ml-5 text-gray-700 text-sm mb-4">
-            <li>Deliverables: concepts, BOM, prototypes, packaging, production</li>
-            <li>Typical timeline: 12–20 weeks depending on complexity</li>
-            <li>Ideal MOQ: 2,000+ units</li>
+            <li>Concept & DFM</li>
+            <li>Prototypes & Tooling</li>
+            <li>Compliant Production</li>
+            <li>Retail‑Ready Packaging</li>
           </ul>
+          <blockquote class="text-gray-700 italic mb-4">“The team’s process discipline and responsiveness made a complex project feel straightforward. We hit our launch date and couldn't be happier.”<br/><span class="not-italic text-sm text-gray-500">— VP Operations, Toy Startup</span></blockquote>
           <div class="flex gap-3">
             <ModernButton href="/get-started" variant="primary" size="sm">Get a Quote</ModernButton>
             <ModernButton href="/process" variant="outline" size="sm">See Process</ModernButton>
           </div>
         </div>
 
-        <div class="bg-white rounded-lg shadow p-6 hover:shadow-md transition-shadow">
+        <!-- Eco‑Source -->
+        <div class="bg-white rounded-xl shadow p-6 hover:shadow-md transition-shadow">
+          <div class="badge mb-3">Best for: Sustainability transitions</div>
           <h3 class="text-2xl font-bold mb-2 text-primary">DaKong Eco‑Source</h3>
-          <p class="text-gray-700 mb-3">Transition existing products to sustainable materials and packaging without sacrificing quality or margins.</p>
+          <p class="text-gray-700 mb-4">Transition existing products to sustainable materials and packaging without sacrificing quality or margins.</p>
+          <p class="font-semibold mb-2">Key Deliverables:</p>
           <ul class="list-disc ml-5 text-gray-700 text-sm mb-4">
-            <li>Materials: FSC board, recycled resins (rPET/rPP), paper‑based trays</li>
-            <li>Proof: plastic reduction %, volume savings, freight efficiency</li>
-            <li>Compliance maintained: ASTM, CPSIA, EN71</li>
+            <li>Materials Audit (FSC, rPET)</li>
+            <li>Packaging Redesign</li>
+            <li>Freight Optimization</li>
+            <li>Maintained Compliance</li>
           </ul>
+          <blockquote class="text-gray-700 italic mb-4">“They reduced plastic in our kits by over 70% without impacting margins. A huge win for our brand and our customers.”<br/><span class="not-italic text-sm text-gray-500">— COO, Subscription Box Co.</span></blockquote>
           <div class="flex gap-3">
             <ModernButton href="/sustainability" variant="outline" size="sm">Learn More</ModernButton>
             <ModernButton href="/get-started" variant="primary" size="sm">Start a Brief</ModernButton>
           </div>
         </div>
 
-        <div class="bg-white rounded-lg shadow p-6 hover:shadow-md transition-shadow">
+        <!-- Kitting -->
+        <div class="bg-white rounded-xl shadow p-6 hover:shadow-md transition-shadow">
+          <div class="badge mb-3">Best for: Complex assembly & retail</div>
           <h3 class="text-2xl font-bold mb-2 text-primary">Kitting at Scale</h3>
-          <p class="text-gray-700 mb-3">Complex bundle assembly and packaging on parallel lines — engineered for speed, accuracy and cost control.</p>
+          <p class="text-gray-700 mb-4">Complex bundle assembly and packaging on parallel lines — engineered for speed, accuracy and cost control.</p>
+          <p class="font-semibold mb-2">Key Deliverables:</p>
           <ul class="list-disc ml-5 text-gray-700 text-sm mb-4">
-            <li>Capabilities: multi‑component kitting, labeling, retail‑ready packs</li>
-            <li>Logistics: US 3PL in Kentucky; palletization and ASN prep</li>
-            <li>Ideal use: subscription boxes, classroom kits, retail bundles</li>
+            <li>Multi‑Component Kitting</li>
+            <li>Labeling & Barcoding</li>
+            <li>US 3PL Integration</li>
+            <li>Retail‑Ready Packs</li>
           </ul>
+          <blockquote class="text-gray-700 italic mb-4">“Kitting accuracy is critical for us. DaKong has maintained over 99% accuracy across tens of thousands of units. They are a reliable partner.”<br/><span class="not-italic text-sm text-gray-500">— Founder, Classroom Kit Co.</span></blockquote>
           <div class="flex gap-3">
             <ModernButton href="/work" variant="outline" size="sm">See Work</ModernButton>
             <ModernButton href="/get-started" variant="primary" size="sm">Get a Quote</ModernButton>
@@ -93,38 +92,90 @@ const process = [
     </div>
   </section>
 
-  <!-- Process Section -->
+  <!-- Transparent Process Timeline -->
   <section class="section-padding bg-gray-50">
     <div class="container-custom">
       <div class="text-center mb-12">
-        <Heading as="h2" class="mb-4">Our Process</Heading>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          A streamlined approach to deliver exceptional results.
-        </p>
+        <Heading as="h2" class="mb-3">A Transparent Process, Engineered for Certainty</Heading>
+        <p class="text-xl text-gray-600">We’ve refined our end‑to‑end manufacturing process to eliminate surprises and deliver exceptional results, every time.</p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {
-          process.map((item) => (
-            <div class="text-center">
-              <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-primary to-primary-light rounded-full flex items-center justify-center text-white text-2xl font-bold">
-                {item.step}
-              </div>
-              <h3 class="text-xl font-semibold mb-2">{item.title}</h3>
-              <p class="text-gray-600">{item.description}</p>
-            </div>
-          ))
-        }
+      <ol class="space-y-8 max-w-4xl mx-auto">
+        <li class="bg-white rounded-xl p-6 shadow">
+          <h3 class="text-xl font-bold mb-1">Phase 1: Brief & Scoping <span class="text-gray-500 font-normal">(Weeks 1–2)</span></h3>
+          <p class="text-gray-700">Deep dive into your vision, technical requirements, target cost‑per‑unit, and compliance needs. Output: a detailed project brief as our blueprint.</p>
+        </li>
+        <li class="bg-white rounded-xl p-6 shadow">
+          <h3 class="text-xl font-bold mb-1">Phase 2: Design & Prototyping <span class="text-gray-500 font-normal">(Weeks 3–6)</span></h3>
+          <p class="text-gray-700">Refine designs for manufacturability (DFM) and produce high‑fidelity prototypes for approval. We iterate until it’s perfect.</p>
+        </li>
+        <li class="bg-white rounded-xl p-6 shadow">
+          <h3 class="text-xl font-bold mb-1">Phase 3: Tooling & Sampling <span class="text-gray-500 font-normal">(Weeks 7–10)</span></h3>
+          <p class="text-gray-700">Create production tooling and provide first‑off samples. Your final sign‑off before mass production begins.</p>
+        </li>
+        <li class="bg-white rounded-xl p-6 shadow">
+          <h3 class="text-xl font-bold mb-1">Phase 4: Mass Production <span class="text-gray-500 font-normal">(Weeks 11–16)</span></h3>
+          <p class="text-gray-700">Manufacture at scale in our 60,000 sq ft facility. Dedicated project teams and rigorous in‑line checks ensure every unit meets spec.</p>
+        </li>
+        <li class="bg-white rounded-xl p-6 shadow">
+          <h3 class="text-xl font-bold mb-1">Phase 5: QA & Logistics <span class="text-gray-500 font-normal">(Weeks 17–20)</span></h3>
+          <p class="text-gray-700">Final batch testing (ASTM, CPSIA, EN71), retail‑ready packaging, and palletization + freight to your destination.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Metrics / Proof -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="text-center mb-10">
+        <Heading as="h2" class="mb-2">Proven Expertise. Measurable Results.</Heading>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center max-w-4xl mx-auto">
+        <div>
+          <div class="text-4xl md:text-5xl font-bold">500+</div>
+          <div class="text-gray-600">Products Launched</div>
+        </div>
+        <div>
+          <div class="text-4xl md:text-5xl font-bold">99.6%</div>
+          <div class="text-gray-600">Kitting Accuracy</div>
+        </div>
+        <div>
+          <div class="text-4xl md:text-5xl font-bold">30%</div>
+          <div class="text-gray-600">Avg. Plastic Reduction</div>
+        </div>
+        <div>
+          <div class="text-4xl md:text-5xl font-bold">15+</div>
+          <div class="text-gray-600">Years of Experience</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section-padding">
-    <div class="container-custom text-center">
-      <Heading as="h2" class="mb-6">Ready to launch your private label?</Heading>
-      <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">Share your brief and we’ll respond with options, timelines and ballpark costs.</p>
-      <ModernButton href="/get-started" variant="primary" size="lg" arrow="right">Get a Quote</ModernButton>
+  <!-- Multi‑CTA -->
+  <section class="section-padding bg-gray-50">
+    <div class="container-custom">
+      <div class="text-center mb-10">
+        <Heading as="h2" class="mb-2">Let's Build Your Next Bestseller</Heading>
+        <p class="text-lg text-gray-700">Whether you're ready to start a project or still exploring your options, we're here to help.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl p-6 shadow text-center">
+          <h3 class="font-semibold mb-2">Start a Project Brief</h3>
+          <p class="text-gray-700 mb-4 text-sm">Have a defined project and ready for a detailed quote? Share your brief and we'll respond with options, timelines, and ballpark costs.</p>
+          <ModernButton href="/get-started" variant="primary">Get a Quote</ModernButton>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow text-center">
+          <h3 class="font-semibold mb-2">Download Our Process Guide</h3>
+          <p class="text-gray-700 mb-4 text-sm">Want a deeper look at our methodology? Get our detailed guide to the private label manufacturing process, from DFM to logistics.</p>
+          <ModernButton href="/process" variant="secondary">View Process</ModernButton>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow text-center">
+          <h3 class="font-semibold mb-2">Ask a Question</h3>
+          <p class="text-gray-700 mb-4 text-sm">Have a specific question about materials, compliance, or capabilities? Send a quick note to our expert team.</p>
+          <ModernButton href="/contact" variant="outline">Contact Us</ModernButton>
+        </div>
+      </div>
     </div>
   </section>
 </Layout>
