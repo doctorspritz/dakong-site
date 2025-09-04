@@ -165,7 +165,7 @@
 
   /* Animated gradient background */
   .gradient-bg {
-    @apply bg-primary-600 dark:bg-primary-700;
+    @apply bg-gradient-to-r from-accentWarm-500 to-accentWarm-600 text-white;
   }
 
   /* Description text style */
