@@ -21,5 +21,4 @@ order: 1
 
 ## Gallery
 
-![Kitting line](../../public/images/product-development.png)
-
+![Kitting line](/images/product-development.png)

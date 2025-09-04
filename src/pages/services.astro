@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ModernHero from '../components/organisms/ModernHero.astro';
+import Heading from '../components/atoms/Heading.astro';
+import ModernButton from '../components/atoms/ModernButton.astro';
 import Card from '../components/molecules/Card.astro';
 import Heading from '../components/atoms/Heading.astro';
 import Button from '../components/atoms/Button.astro';
@@ -24,28 +26,63 @@ const process = [
 <Layout title="Private Label Solutions">
   <ModernHero
     title="Private Label Solutions"
-    subtitle="End‑to‑end capabilities from concept to delivery—designed for speed, quality and reliability."
-    ctaText="Let's Talk"
-    ctaHref="/contact"
-    secondaryCtaText="About Us"
-    secondaryCtaHref="/about"
+    subtitle="Productized services that simplify development, de‑risk manufacturing and accelerate time‑to‑market."
+    ctaText="Get a Quote"
+    ctaHref="/get-started"
+    secondaryCtaText="See Our Process"
+    secondaryCtaHref="/process"
   />
 
   <!-- Services Grid -->
   <section class="section-padding">
     <div class="container-custom">
       <div class="text-center mb-12">
-        <Heading as="h2" gradient class="mb-4">End‑to‑End for Private Label</Heading>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">What working with Da Kong looks like.</p>
+        <Heading as="h2" gradient class="mb-4">Productized Offerings</Heading>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Choose a path that matches your stage and goals.</p>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {steps.map((s) => (
-          <div class="bg-white rounded-lg shadow p-6 hover:shadow-md transition-shadow">
-            <h3 class="text-2xl font-bold mb-3 text-primary">{s.title}</h3>
-            <p class="text-gray-600">{s.desc}</p>
+        <div class="bg-white rounded-lg shadow p-6 hover:shadow-md transition-shadow">
+          <h3 class="text-2xl font-bold mb-2 text-primary">DaKong Launchpad</h3>
+          <p class="text-gray-700 mb-3">End‑to‑end development for new products and kits — from concept and prototyping to compliant manufacturing and retail packaging.</p>
+          <ul class="list-disc ml-5 text-gray-700 text-sm mb-4">
+            <li>Deliverables: concepts, BOM, prototypes, packaging, production</li>
+            <li>Typical timeline: 12–20 weeks depending on complexity</li>
+            <li>Ideal MOQ: 2,000+ units</li>
+          </ul>
+          <div class="flex gap-3">
+            <ModernButton href="/get-started" variant="primary" size="sm">Get a Quote</ModernButton>
+            <ModernButton href="/process" variant="outline" size="sm">See Process</ModernButton>
           </div>
-        ))}
+        </div>
+
+        <div class="bg-white rounded-lg shadow p-6 hover:shadow-md transition-shadow">
+          <h3 class="text-2xl font-bold mb-2 text-primary">DaKong Eco‑Source</h3>
+          <p class="text-gray-700 mb-3">Transition existing products to sustainable materials and packaging without sacrificing quality or margins.</p>
+          <ul class="list-disc ml-5 text-gray-700 text-sm mb-4">
+            <li>Materials: FSC board, recycled resins (rPET/rPP), paper‑based trays</li>
+            <li>Proof: plastic reduction %, volume savings, freight efficiency</li>
+            <li>Compliance maintained: ASTM, CPSIA, EN71</li>
+          </ul>
+          <div class="flex gap-3">
+            <ModernButton href="/sustainability" variant="outline" size="sm">Learn More</ModernButton>
+            <ModernButton href="/get-started" variant="primary" size="sm">Start a Brief</ModernButton>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow p-6 hover:shadow-md transition-shadow">
+          <h3 class="text-2xl font-bold mb-2 text-primary">Kitting at Scale</h3>
+          <p class="text-gray-700 mb-3">Complex bundle assembly and packaging on parallel lines — engineered for speed, accuracy and cost control.</p>
+          <ul class="list-disc ml-5 text-gray-700 text-sm mb-4">
+            <li>Capabilities: multi‑component kitting, labeling, retail‑ready packs</li>
+            <li>Logistics: US 3PL in Kentucky; palletization and ASN prep</li>
+            <li>Ideal use: subscription boxes, classroom kits, retail bundles</li>
+          </ul>
+          <div class="flex gap-3">
+            <ModernButton href="/work" variant="outline" size="sm">See Work</ModernButton>
+            <ModernButton href="/get-started" variant="primary" size="sm">Get a Quote</ModernButton>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -80,8 +117,8 @@ const process = [
   <section class="section-padding">
     <div class="container-custom text-center">
       <Heading as="h2" class="mb-6">Ready to launch your private label?</Heading>
-      <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">Talk to our team about development, kitting and distribution options.</p>
-      <Button href="/contact" variant="primary" size="lg"> Let's Talk </Button>
+      <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">Share your brief and we’ll respond with options, timelines and ballpark costs.</p>
+      <ModernButton href="/get-started" variant="primary" size="lg" arrow="right">Get a Quote</ModernButton>
     </div>
   </section>
 </Layout>

@@ -19,6 +19,25 @@ const { title, description = 'Da Kong - Education and Custom Kit Production' } =
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    {
+      import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN && (
+        <script defer data-domain={import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN} src="https://plausible.io/js/script.js"></script>
+      )
+    }
+    {
+      import.meta.env.PUBLIC_GA_ID && (
+        <>
+          <script async src={`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.PUBLIC_GA_ID}`}></script>
+          <script>
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
+              gtag('config', '${import.meta.env.PUBLIC_GA_ID}');
+            `}
+          </script>
+        </>
+      )
+    }
     <meta property="og:title" content={`${title} | Da Kong`} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
