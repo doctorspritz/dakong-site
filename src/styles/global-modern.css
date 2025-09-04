@@ -1,15 +1,12 @@
 @import url('./fonts.css');
+/* animations and theme imports must precede other statements */
+@import 'tw-animate-css';
+@import './aos.css' layer(utilities);
+@import './buttons.css' layer(components);
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* animations */
-@import 'tw-animate-css';
-
-/* theme-specific imports */
-@import './aos.css' layer(utilities);
-@import './buttons.css' layer(components);
 
 :root {
   /* Da Kong Brand Colors - Modern Interpretation */

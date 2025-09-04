@@ -14,6 +14,9 @@ export interface Props {
   videoSrc?: string;
   videoPoster?: string;
   videoOpacity?: number; // 0..1
+  primaryVariant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'gradient';
+  secondaryVariant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'gradient';
+  primaryGlow?: boolean;
   class?: string;
 }
 
@@ -29,6 +32,9 @@ const {
   videoSrc,
   videoPoster,
   videoOpacity = 0.18,
+  primaryVariant = 'primary',
+  secondaryVariant = 'outline',
+  primaryGlow = false,
   class: className = '',
 } = Astro.props;
 ---
@@ -62,10 +68,11 @@ const {
             {ctaText && (
               <ModernButton
                 href={ctaHref}
-                variant="primary"
+                variant={primaryVariant}
                 size="lg"
                 arrow="right"
                 class="min-w-[200px]"
+                glow={primaryGlow}
               >
                 {ctaText}
               </ModernButton>
@@ -73,7 +80,7 @@ const {
             {secondaryCtaText && (
               <ModernButton
                 href={secondaryCtaHref}
-                variant="outline"
+                variant={secondaryVariant}
                 size="lg"
                 class="min-w-[200px]"
               >
