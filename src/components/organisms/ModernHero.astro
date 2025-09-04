@@ -11,6 +11,9 @@ export interface Props {
   secondaryCtaHref?: string;
   image?: string;
   imageOpacity?: number; // 0..1
+  videoSrc?: string;
+  videoPoster?: string;
+  videoOpacity?: number; // 0..1
   class?: string;
 }
 
@@ -23,6 +26,9 @@ const {
   secondaryCtaHref,
   image,
   imageOpacity = 0.12,
+  videoSrc,
+  videoPoster,
+  videoOpacity = 0.18,
   class: className = '',
 } = Astro.props;
 ---
@@ -80,7 +86,11 @@ const {
     </div>
   </div>
 
-  {image && (
+  {videoSrc ? (
+    <div class="absolute inset-0 z-0" style={{ opacity: String(videoOpacity) }}>
+      <video src={videoSrc} poster={videoPoster || image} autoplay muted loop playsinline class="w-full h-full object-cover"></video>
+    </div>
+  ) : image && (
     <div class="absolute inset-0 z-0" style={{ opacity: String(imageOpacity) }}>
       <img src={image} alt="" class="w-full h-full object-cover" />
     </div>

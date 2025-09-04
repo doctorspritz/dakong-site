@@ -19,3 +19,4 @@ order: 2
 - Labeling, retail packaging, and ASN preparation
 - QA sampling plan and defect triage
 
+> Compliance: CPSIA labeling and documentation maintained throughout assembly and packaging.

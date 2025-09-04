@@ -8,19 +8,19 @@ import { Icon } from 'astro-icon/components';
 
 const features = [
   {
-    icon: 'tabler/user',
+    icon: 'custom/client-centric',
     title: 'Client‑centric Approach',
     description:
       'Dedicated project teams and transparent timelines; we tailor our process to your brief and constraints.',
   },
   {
-    icon: 'tabler/briefcase',
+    icon: 'custom/experience',
     title: 'Experience & Expertise',
     description:
       '15+ years bringing educational products to market for global brands with a strong track record of launches.',
   },
   {
-    icon: 'tabler/shield-check',
+    icon: 'custom/compliance',
     title: 'Quality & Compliance',
     description:
       'Market‑ready results that meet or exceed ASTM F‑963, US CPSIA, and EN71 safety standards.',
@@ -112,7 +112,7 @@ const features = [
     </div>
   </section>
 
-  <!-- Product Development & Custom Kits -->
+  <!-- Product Development & Custom Kits (Gallery) -->
   <section id="product-development" class="section-padding bg-white">
     <div class="site-container">
       <div class="text-center mb-12">
@@ -120,19 +120,22 @@ const features = [
           Product Development &<br />Custom Kits Production
         </h2>
         <p class="text-lg text-gray-700 max-w-3xl mx-auto">
-          In the Da Kong factory, spanning across a vast 60,000 sq ft, we have efficiently
-          allocated the space, dedicating half of it to packaging operations while the remaining
-          half hosts assembly lines where custom kits are skillfully put together.
+          Our 60,000 sq ft facility runs parallel kitting and packaging lines, engineered for speed,
+          accuracy and cost control.
         </p>
       </div>
-      <img
-        src="/images/product-development.png"
-        alt="Production"
-        class="w-full rounded-2xl shadow"
-        data-aos="zoom-in"
-      />
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <img src="/images/product-development.png" alt="Kitting line" class="w-full rounded-2xl shadow" data-aos="zoom-in" />
+        <img src="/images/products-2.jpg" alt="Packaging cell" class="w-full rounded-2xl shadow" data-aos="zoom-in" data-aos-delay="0.1" />
+      </div>
+      <div class="mt-6 grid md:grid-cols-3 gap-6">
+        <img src="/images/products-3.jpg" alt="Assembly detail" class="w-full rounded-2xl shadow" data-aos="zoom-in" data-aos-delay="0.15" />
+        <img src="/images/products-custom-kits.jpg" alt="Finished kits" class="w-full rounded-2xl shadow" data-aos="zoom-in" data-aos-delay="0.2" />
+        <img src="/images/brand-collab.jpg" alt="Team at work" class="w-full rounded-2xl shadow" data-aos="zoom-in" data-aos-delay="0.25" />
+      </div>
       <div class="mt-8 text-center">
-        <ModernButton href="/products" variant="outline" size="md">Learn More</ModernButton>
+        <ModernButton href="/products" variant="outline" size="md">See More</ModernButton>
       </div>
     </div>
   </section>
@@ -186,12 +189,12 @@ const features = [
         <h2 class="text-2xl md:text-3xl font-bold">Certifications & Standards</h2>
         <p class="text-gray-600">We build to global safety standards and recognized programs.</p>
       </div>
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 items-center justify-items-center text-sm">
-        <div class="px-3 py-2 border rounded-md text-gray-700">ASTM F‑963</div>
-        <div class="px-3 py-2 border rounded-md text-gray-700">US CPSIA</div>
-        <div class="px-3 py-2 border rounded-md text-gray-700">EN71</div>
-        <div class="px-3 py-2 border rounded-md text-gray-700">FSC Materials</div>
-        <div class="px-3 py-2 border rounded-md text-gray-700">ICTI Ethical Toy</div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 items-center justify-items-center text-sm">
+        <div class="badge">ASTM F‑963</div>
+        <div class="badge">US CPSIA</div>
+        <div class="badge">EN71</div>
+        <div class="badge">FSC Materials</div>
+        <div class="badge">ICTI Ethical Toy</div>
       </div>
     </div>
   </section>

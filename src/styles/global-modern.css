@@ -136,6 +136,9 @@
 }
 
 @layer components {
+  .badge {
+    @apply inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accentWarm-50 text-accentWarm-800 border border-accentWarm-200 text-sm;
+  }
   .site-container {
     @apply container mx-auto px-4 sm:px-6 lg:px-8;
   }
