@@ -72,6 +72,101 @@ const features = [
     </div>
   </section>
 
+  <!-- Meet the Experts -->
+  <section class="section-padding bg-white">
+    <div class="site-container">
+      <h2 class="text-3xl md:text-4xl font-bold text-primary-900 text-center mb-10">Meet the Experts</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-primary-600 text-white flex items-center justify-center text-2xl font-bold">ML</div>
+          <h3 class="text-lg font-semibold">Miles Leach</h3>
+          <p class="text-gray-600">Founder</p>
+        </div>
+        <div class="text-center">
+          <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-primary-600 text-white flex items-center justify-center text-2xl font-bold">PD</div>
+          <h3 class="text-lg font-semibold">Head of Product Development</h3>
+          <p class="text-gray-600">Concepts, BOM, prototyping</p>
+        </div>
+        <div class="text-center">
+          <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-primary-600 text-white flex items-center justify-center text-2xl font-bold">QA</div>
+          <h3 class="text-lg font-semibold">Quality Assurance Manager</h3>
+          <p class="text-gray-600">ASTM/CPSIA/EN71 compliance</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section-padding bg-gray-50">
+    <div class="site-container">
+      <h2 class="text-3xl md:text-4xl font-bold text-primary-900 text-center mb-10">What Clients Say</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <figure class="bg-white rounded-2xl p-6 shadow">
+          <blockquote class="text-gray-800">“DaKong was an invaluable partner in navigating safety standards for our European launch. Their attention to detail was flawless.”</blockquote>
+          <figcaption class="mt-4 text-sm text-gray-600">Director of Product, Global Education Brand</figcaption>
+        </figure>
+        <figure class="bg-white rounded-2xl p-6 shadow">
+          <blockquote class="text-gray-800">“They reduced plastic in our kits by over 70% without impacting margins. We hit our date with retail‑ready packaging.”</blockquote>
+          <figcaption class="mt-4 text-sm text-gray-600">COO, Subscription Box Company</figcaption>
+        </figure>
+        <figure class="bg-white rounded-2xl p-6 shadow">
+          <blockquote class="text-gray-800">“The team’s process discipline and responsiveness made a complex project feel straightforward. We’ll be back.”</blockquote>
+          <figcaption class="mt-4 text-sm text-gray-600">VP Operations, Toy Startup</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Work -->
+  <section class="section-padding bg-white">
+    <div class="site-container">
+      <div class="flex items-end justify-between mb-8 gap-4">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold text-primary-900">Featured Work</h2>
+          <p class="text-gray-700">A glimpse of recent projects and outcomes.</p>
+        </div>
+        <div>
+          <ModernButton href="/work" variant="outline" size="md">View All</ModernButton>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <a href="/work/subscription-science-kit" class="block group bg-white rounded-2xl shadow hover:shadow-md transition-shadow overflow-hidden">
+          <div class="aspect-video bg-gray-100 overflow-hidden">
+            <img src="/images/product-development.png" alt="Subscription Science Kit" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Subscription Science Kit</h3>
+            <p class="text-gray-700 mb-3">Plastic reduced by ~80% with paper‑based trays; on‑time launch for a monthly box.</p>
+            <div class="badge">ASTM F‑963 compliant</div>
+          </div>
+        </a>
+
+        <a href="/work/classroom-art-kit" class="block group bg-white rounded-2xl shadow hover:shadow-md transition-shadow overflow-hidden">
+          <div class="aspect-video bg-gray-100 overflow-hidden">
+            <img src="/images/products-custom-kits.jpg" alt="Classroom Art Kit" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Classroom Art Kit</h3>
+            <p class="text-gray-700 mb-3">99.6% kitting accuracy across first 25k units; retail‑ready packs for national retail.</p>
+            <div class="badge">CPSIA labeling maintained</div>
+          </div>
+        </a>
+
+        <a href="/products" class="block group bg-white rounded-2xl shadow hover:shadow-md transition-shadow overflow-hidden">
+          <div class="aspect-video bg-gray-100 overflow-hidden">
+            <img src="/images/products-2.jpg" alt="Custom Kits" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Custom Kits & Packaging</h3>
+            <p class="text-gray-700 mb-3">Parallel kitting and packaging lines engineered for speed and cost control.</p>
+            <div class="badge">Scale: 2,000+ unit runs</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- Visual Break: Full-Width Facility Image -->
   <section class="relative h-64 md:h-80 my-8">
     <img src="/images/product-development.png" alt="Assembly line" class="absolute inset-0 w-full h-full object-cover" />
