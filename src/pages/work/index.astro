@@ -2,10 +2,12 @@
 import Layout from '../../layouts/Layout.astro';
 import Heading from '../../components/atoms/Heading.astro';
 
-const posts = Object.entries(import.meta.glob('./*.mdx', { eager: true }))
+const posts = Object.entries(
+  import.meta.glob(['./*.md', './*.mdx'], { eager: true })
+)
   .map(([path, mod]: any) => ({
     path,
-    url: path.replace('./', '/work/').replace(/\.mdx$/, ''),
+    url: path.replace('./', '/work/').replace(/\.(md|mdx)$/, ''),
     frontmatter: mod.frontmatter || {},
   }))
   .sort((a, b) => (a.frontmatter.order || 0) - (b.frontmatter.order || 0));
@@ -32,4 +34,3 @@ const posts = Object.entries(import.meta.glob('./*.mdx', { eager: true }))
     </div>
   </section>
 </Layout>
-
