@@ -6,21 +6,21 @@ import ModernButton from '../components/atoms/ModernButton.astro';
 import Heading from '../components/atoms/Heading.astro';
 import { Icon } from 'astro-icon/components';
 
-const features = [
+const featureBlocks = [
   {
-    icon: 'custom/client-centric',
+    image: '/images/brand-collab.jpg',
     title: 'Client‑centric Approach',
     description:
       'You get a dedicated project team and a transparent timeline. We tailor our process to fit your brief, budget, and deadlines.',
   },
   {
-    icon: 'custom/experience',
+    image: '/images/products-3.jpg',
     title: 'Experience & Expertise',
     description:
       '15+ years bringing educational products to market for global brands with a strong track record of launches.',
   },
   {
-    icon: 'custom/compliance',
+    image: '/images/products-2.jpg',
     title: 'Quality & Compliance',
     description:
       'Market‑ready results that meet or exceed ASTM F‑963, US CPSIA, and EN71 safety standards.',
@@ -40,6 +40,8 @@ const features = [
     secondaryCtaHref="/process"
     image="/images/brand-collab.jpg"
     imageOpacity={0.18}
+    videoSrc="/videos/hero.mp4"
+    videoPoster="/images/brand-collab.jpg"
   />
 
   
@@ -97,9 +99,9 @@ const features = [
   </section>
 
   <!-- Testimonials -->
-  <section class="section-padding bg-gray-50">
+  <section class="section-padding bg-primary-900 text-white">
     <div class="site-container">
-      <h2 class="text-3xl md:text-4xl font-bold text-primary-900 text-center mb-10">The Partner Brands Trust</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">The Partner Brands Trust</h2>
       <div class="grid md:grid-cols-3 gap-6">
         <figure class="bg-white rounded-2xl p-6 shadow">
           <blockquote class="text-gray-800">“DaKong was an invaluable partner in navigating safety standards for our European launch. Their attention to detail was flawless.”</blockquote>
@@ -126,7 +128,7 @@ const features = [
           <p class="text-gray-700">From concept to customer.</p>
         </div>
         <div>
-          <ModernButton href="/work" variant="outline" size="md">View All</ModernButton>
+          <ModernButton href="/work" variant="primary" size="md">View All</ModernButton>
         </div>
       </div>
 
@@ -187,15 +189,17 @@ const features = [
         <p class="text-xl description max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="0.1">We’re built on three principles: client‑centric process, deep experience, and rigorous quality assurance.</p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="space-y-12">
         {
-          features.map((feature, index) => (
-            <div class="glass-card rounded-2xl p-8 text-center">
-              <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-primary-600 flex items-center justify-center shadow">
-                <Icon name={feature.icon} class="w-10 h-10 text-white" />
+          featureBlocks.map((f, i) => (
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+              <div class={i % 2 === 0 ? '' : 'md:order-2'}>
+                <img src={f.image} alt={f.title} class="w-full rounded-2xl shadow" />
               </div>
-              <h3 class="text-xl font-bold mb-3">{feature.title}</h3>
-              <p class="description">{feature.description}</p>
+              <div class={i % 2 === 0 ? '' : 'md:order-1'}>
+                <h3 class="text-2xl md:text-3xl font-bold mb-4">{f.title}</h3>
+                <p class="text-lg text-gray-700">{f.description}</p>
+              </div>
             </div>
           ))
         }

@@ -86,13 +86,14 @@ const {
     </div>
   </div>
 
-  {videoSrc ? (
-    <div class="absolute inset-0 z-0" style={{ opacity: String(videoOpacity) }}>
-      <video src={videoSrc} poster={videoPoster || image} autoplay muted loop playsinline class="w-full h-full object-cover"></video>
-    </div>
-  ) : image && (
+  {image && (
     <div class="absolute inset-0 z-0" style={{ opacity: String(imageOpacity) }}>
       <img src={image} alt="" class="w-full h-full object-cover" />
+    </div>
+  )}
+  {videoSrc && (
+    <div class="absolute inset-0 z-0" style={{ opacity: String(videoOpacity) }}>
+      <video src={videoSrc} poster={videoPoster || image} autoplay muted loop playsinline class="w-full h-full object-cover"></video>
     </div>
   )}
 </section>
