@@ -7,9 +7,11 @@ const currentPath = Astro.url.pathname;
 
 const navItems = [
   { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
+  { href: '/work', label: 'Work' },
   { href: '/services', label: 'Private Label' },
-  { href: '/products', label: 'Manufacturing' },
+  { href: '/process', label: 'Process' },
+  { href: '/products', label: 'Products' },
+  { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
 ];
 ---
@@ -39,7 +41,7 @@ const navItems = [
           }
         </div>
 
-        <ModernButton href="/contact" variant="gradient" size="sm" arrow="right">
+        <ModernButton href="/get-started" variant="gradient" size="sm" arrow="right">
           Get Started
         </ModernButton>
       </div>
@@ -73,7 +75,7 @@ const navItems = [
           ))
         }
         <div class="pt-4 border-t border-gray-200">
-          <ModernButton href="/contact" variant="gradient" size="sm" class="w-full" arrow="right">
+          <ModernButton href="/get-started" variant="gradient" size="sm" class="w-full" arrow="right">
             Get Started
           </ModernButton>
         </div>
