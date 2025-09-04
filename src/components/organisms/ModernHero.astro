@@ -43,26 +43,26 @@ const {
   <!-- Background/scrim: darken when video present, light brand gradient otherwise -->
   {
     videoSrc ? (
-      <div class="absolute inset-0 bg-black/40 md:bg-black/50"></div>
+      <div class="absolute inset-0 z-10 bg-black/50 md:bg-black/55 backdrop-blur-sm pointer-events-none"></div>
     ) : (
       <div class="absolute inset-0 bg-gradient-to-b from-white to-primary-50"></div>
     )
   }
 
   <!-- Hero content -->
-  <div class="site-container relative z-10">
-    <div class="max-w-5xl mx-auto text-center">
+  <div class="site-container relative z-20">
+    <div class={`max-w-5xl mx-auto text-center`}>
       <!-- Badge -->
       
 
       <!-- Main heading with gradient -->
-      <h1 class={`text-5xl sm:text-6xl md:text-7xl font-bold mb-6 leading-tight ${videoSrc ? 'text-white' : 'text-primary-900'}`}>
+      <h1 class={`text-5xl sm:text-6xl md:text-7xl font-bold mb-6 leading-tight ${videoSrc ? 'text-white drop-shadow-lg' : 'text-primary-900'}`}>
         {title}
       </h1>
 
       {
         subtitle && (
-          <p class={`text-xl md:text-2xl mb-10 max-w-3xl mx-auto leading-relaxed ${videoSrc ? 'text-white/85' : 'text-gray-700'}`}>
+          <p class={`text-xl md:text-2xl mb-10 max-w-3xl mx-auto leading-relaxed ${videoSrc ? 'text-white/85 drop-shadow' : 'text-gray-700'}`}>
             {subtitle}
           </p>
         )
